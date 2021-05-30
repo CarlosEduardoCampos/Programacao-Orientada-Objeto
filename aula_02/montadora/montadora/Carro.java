@@ -13,19 +13,32 @@ public class Carro
     private int kmRum;
     // Intaciar objetos:
     Scanner input = new Scanner(System.in);
-    // Método:
+    // Método andar.
     protected void andar()
     {
         ligar();
         System.out.println("\tCarro Andando ");
     }
+    // Método parar.
     protected void parar()
     {
         System.out.println("\tCarro Parado ");
     }
+    // Método Ligar.
     private void ligar()
     {
         System.out.println("\tCarro Ligado ");
+    }
+    // Método de  Consumo de Combistivel.
+    public int consumoCombustivel(int kmCalculo, int qteLitros)
+    {
+        int res;
+        res = kmCalculo / qteLitros;
+        return res;
+    }
+    public void atualizaTanque(int qteLitros)
+    {
+        this.litComb = this.litComb - qteLitros;
     }
     // Métodos GETs e SETs:
     // variável
@@ -150,11 +163,12 @@ public class Carro
                               " MODELO: " + modelo + "\n" ;
             return resposta;
          */
-        return "\tPROPRIETARIO "      + namPro  + "\n" +
-               " COR: "               + cor     + "\n" +
-               " MARCA: "             + marca   + "\n" +
-               " MODELO: "            + modelo  + "\n" +
-               " VELOCIDADE MAXIMA: " + velMax  + "\n" +
-               " NUMERO DE PORTAS: "  + numPort + "\n" ;      
+        return "\tPROPRIETARIO "           + namPro  + "\n" +
+               " COR: "                    + cor     + "\n" +
+               " MARCA: "                  + marca   + "\n" +
+               " MODELO: "                 + modelo  + "\n" +
+               " VELOCIDADE MAXIMA: "      + velMax  + "\n" +
+               " NUMERO DE PORTAS: "       + numPort + "\n"
+               " CONSUMO DE COMBUSTIVEL: " + ;      
     }
 }
