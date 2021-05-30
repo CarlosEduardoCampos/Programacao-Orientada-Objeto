@@ -36,9 +36,35 @@ public class Carro
         res = kmCalculo / qteLitros;
         return res;
     }
+    public void atualizaKmRum(int km)
+    {
+        this.kmRum = this.kmRum + km;
+    }
     public void atualizaTanque(int qteLitros)
     {
         this.litComb = this.litComb - qteLitros;
+    }
+    // Método de viagem.
+    public void calculoViagem()
+    {
+        int kmPercorridos;
+        int litGasto;
+        //
+        System.out.println(" Passe as informaçõe de um viagem para que seja calculado o consumo de combustivel: ");
+        // recebendo informaçõe para as var.
+        System.out.print(" KM PERCORRIDOS NA VIAGEM: ");
+        kmPercorridos = Integer.parseInt(input.nextLine());
+        //
+        System.out.print(" LITROS DE COMBUSTIVEL GASTOS NA VIAGEM: ");
+        litGasto = Integer.parseInt(input.nextLine());
+        //
+        atualizaKmRum(kmPercorridos);
+        atualizaTanque(litGasto);
+        //
+        System.out.println(" DEPOIS DE COMPLETAR A VIAGEM: ");
+        System.out.println(toString());
+        //
+        System.out.println(" CONSUMO DE COMBUSTIVEL: " + consumoCombustivel(kmPercorridos, litGasto) + "Km por litro.");
     }
     // Métodos GETs e SETs:
     // variável
@@ -139,10 +165,10 @@ public class Carro
         O comando Integer.parseInt transforma o valor str em valor int.
         */
         System.out.print(" KM rodados do carro: ");
-        litComb = Integer.parseInt(input.nextLine()); // recebendo int no comando input
+        kmRum = Integer.parseInt(input.nextLine()); // recebendo int no comando input
         //
         System.out.print(" Litros de Combustivel do carro: ");
-        kmRum =Integer.parseInt(input.nextLine()); // recebendo int no comando input
+        litComb =Integer.parseInt(input.nextLine()); // recebendo int no comando input
         //
         System.out.print(" Numero de Portas do carro: ");
         numPort = Integer.parseInt(input.nextLine()); // recebendo int no comando input
@@ -167,8 +193,9 @@ public class Carro
                " COR: "                    + cor     + "\n" +
                " MARCA: "                  + marca   + "\n" +
                " MODELO: "                 + modelo  + "\n" +
+               " KM RODADOS : "            + kmRum   + "\n" +
+               " NUMERO DE PORTAS: "       + numPort + "\n" +
                " VELOCIDADE MAXIMA: "      + velMax  + "\n" +
-               " NUMERO DE PORTAS: "       + numPort + "\n"
-               " CONSUMO DE COMBUSTIVEL: " + ;      
+               " Litros de Combustivel: "  + litComb + "\n" ;  
     }
 }
