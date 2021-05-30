@@ -7,8 +7,8 @@ public class Carro
     private String marca;
     private String modelo;
     private String namPro;
-    private String numPort;
-    private String velMax;
+    private int numPort;
+    private int velMax; 
     // Intaciar objetos:
     Scanner input = new Scanner(System.in);
     // Método:
@@ -57,21 +57,21 @@ public class Carro
     }
     // Métodos GETs e SETs:
     // variável
-    public String getNumPort()
+    public int getNumPort()
     {
         return this.numPort;
     }
-    public void setNumPort(String numPort)
+    public void setNumPort(int numPort)
     {
         this.numPort = numPort ;
     }
     // Métodos GETs e SETs:
     // variável
-    public String getVelMax()
+    public int getVelMax()
     {
         return this.velMax;
     }
-    public void setVelMax(String velMax)
+    public void setVelMax(int velMax)
     {
         this.velMax = velMax ;
     }
@@ -99,12 +99,15 @@ public class Carro
         System.out.print(" Modelo do carro: ");
         modelo = input.nextLine();
         setModelo(modelo);
-        //
+        /* 
+        input e um comando que recebe um valor str.
+        O comando Integer.parseInt transforma o valor str em valor int.
+        */
         System.out.print(" Numero de Portas do carro: ");
-        numPort = input.nextLine();
+        numPort = Integer.parseInt(input.nextLine()); // recebendo int no comando input
         //
         System.out.print(" Velocidade Maxima do carro: ");
-        velMax = input.nextLine();
+        velMax =Integer.parseInt(input.nextLine()); // recebendo int no comando input
         //
         System.out.print(" Nome do Proprietario do carro: ");
         namPro = input.nextLine();
@@ -119,12 +122,11 @@ public class Carro
                               " MODELO: " + modelo + "\n" ;
             return resposta;
          */
-        return "\tPROPRIETARIO "       + namPro  + "\n" +
-               " COR: "                + cor     + "\n" +
-               " MARCA: "              + marca   + "\n" +
-               " MODELO: "             + modelo  + "\n" +
-               " VELOCIDADE MAXIMA: "  + velMax  + "\n" +
-               " NUMERO DE PORTAS: "   + numPort + "\n" ;
-               
+        return "\tPROPRIETARIO "      + namPro  + "\n" +
+               " COR: "               + cor     + "\n" +
+               " MARCA: "             + marca   + "\n" +
+               " MODELO: "            + modelo  + "\n" +
+               " VELOCIDADE MAXIMA: " + velMax  + "\n" +
+               " NUMERO DE PORTAS: "  + numPort + "\n" ;      
     }
 }
