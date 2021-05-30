@@ -8,7 +8,9 @@ public class Carro
     private String modelo;
     private String namPro;
     private int numPort;
-    private int velMax; 
+    private int velMax;
+    private int litComb;
+    private int kmRum;
     // Intaciar objetos:
     Scanner input = new Scanner(System.in);
     // Método:
@@ -75,7 +77,7 @@ public class Carro
     {
         this.velMax = velMax ;
     }
-        // Métodos GETs e SETs:
+    // Métodos GETs e SETs:
     // variável
     public String getNamPro()
     {
@@ -84,6 +86,26 @@ public class Carro
     public void setNamPro(String namPro)
     {
         this.namPro = namPro;
+    }
+    // Métodos GETs e SETs:
+    // variável
+    public int getLitComb()
+    {
+        return this.litComb;
+    }
+    public void setLitComb(int litComb)
+    {
+        this.litComb = litComb ;
+    }
+    // Métodos GETs e SETs:
+    // variável
+    public int getKmRum()
+    {
+        return this.kmRum;
+    }
+    public void setKmRum(int kmRum)
+    {
+        this.kmRum = kmRum ;
     }
     // Método de cadastro da informação.
     public void inVar() // Recebe caracteristicas do carro.
@@ -103,6 +125,12 @@ public class Carro
         input e um comando que recebe um valor str.
         O comando Integer.parseInt transforma o valor str em valor int.
         */
+        System.out.print(" KM rodados do carro: ");
+        litComb = Integer.parseInt(input.nextLine()); // recebendo int no comando input
+        //
+        System.out.print(" Litros de Combustivel do carro: ");
+        kmRum =Integer.parseInt(input.nextLine()); // recebendo int no comando input
+        //
         System.out.print(" Numero de Portas do carro: ");
         numPort = Integer.parseInt(input.nextLine()); // recebendo int no comando input
         //
