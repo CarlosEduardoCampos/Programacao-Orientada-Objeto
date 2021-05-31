@@ -5,12 +5,35 @@ public class Carro
 {
     private String cor;
     private String marca;
-    private String modelo;
     private String namPro;
-    private int numPort;
+    private String modelo;
+    private int kmRum;
     private int velMax;
     private int litComb;
-    private int kmRum;
+    private int numPort;
+    // Método construtor:
+    public Carro(String cor, String marca, String modelo, String namPro, int numPort, int velMax, int litComb, int kmRum)
+    {
+        this.cor     = cor;
+        this.kmRum   = kmRum;
+        this.marca   = marca;
+        this.velMax  = velMax;
+        this.namPro  = namPro;
+        this.modelo  = modelo;
+        this.litComb = litComb;
+        this.numPort = numPort;
+    }
+    // Método construtor com sobre carga de Métodos:
+    public Carro(String cor, String marca, String modelo, String namPro, int numPort, int velMax, int litComb)
+    {
+        this.cor     = cor;
+        this.marca   = marca;
+        this.velMax  = velMax;
+        this.namPro  = namPro;
+        this.modelo  = modelo;
+        this.litComb = litComb;
+        this.numPort = numPort;
+    }
     // Intaciar objetos:
     Scanner input = new Scanner(System.in);
     // Método andar.
