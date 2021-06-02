@@ -14,13 +14,12 @@ public class AppTeste {
         t2.atributo1 = 20;
         t2.atributo1 = 200;
         //
-        TesteStatic.ATRIBUTOS3 = 500;
+        TesteStatic.ATRIBUTO3 = 500;
         //
         t1.exibirAtributos("t1");
         //
-        t1.Atributos3 = 300;
+        t1.ATRIBUTO3 = 300;
         //
         t2.exibirAtributos("t2");
-    }
-    
+    }  
 }
