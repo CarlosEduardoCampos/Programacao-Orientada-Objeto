@@ -1,5 +1,5 @@
-package exemplo01;
+package exemplo02;
 
-public class TesteStatic {
+public class TesteStatic2 {
     
 }

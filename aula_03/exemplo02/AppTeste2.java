@@ -1,5 +1,8 @@
-package exemplo01;
+package exemplo02;
 
-public class AppTeste {
+public class AppTeste2 {
+    public static void main(String[] args) {
+        
+    }
     
 }
