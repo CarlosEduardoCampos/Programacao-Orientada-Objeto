@@ -1,8 +1,8 @@
 # Criar o objeto na Classe Fabrica
 
-## InstruÁıes
+## Instru√ß√µes
 
-Criamos em aula o objeto do carroDoTiao e carroDoJao. Criar utilizando o mÈtodo construtor o carroDoZe, passando por par‚metros vari·veis preenchidas via comando na console 
+Criamos em aula o objeto do carroDoTiao e carroDoJao. Criar utilizando o m–∂todo construtor o carroDoZe, passando por par–†metros vari—Äveis preenchidas via comando na console 
 
 input.nextLine().
 
@@ -11,7 +11,6 @@ System.out.print("Num. portas carro do Ze: ");
 
 int numeroPortas = Integer.parseInt(input.nextLine());
 
-Passar no construtor a vari·vel.
+Passar no construtor a vari—Ävel.
 
 Enviar o arquivo Fabrica.java
-
