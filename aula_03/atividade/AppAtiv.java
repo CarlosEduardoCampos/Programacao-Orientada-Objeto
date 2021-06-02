@@ -12,10 +12,12 @@ public class AppAtiv {
             System.out.println("    1 - Polegadas para Centimetros    ");
             System.out.println("    2 - Pes para Centimetros          ");
             System.out.println("    3 - Milhas para Centimetros       ");
-            System.out.println("\n .................................... \n");
+            System.out.println("\n .................................... ");
             //
             System.out.print("OPÇÃO: ");
             op = input.nextLine();
+            // 
+            System.out.println("\n .................................... \n");
             // Tratamento de opção
             switch (op) {
                 case "1":
@@ -42,5 +44,6 @@ public class AppAtiv {
                     break;
             }
         }while(op == "#");
+        System.out.println(" .................................... \n");
     }
 }
