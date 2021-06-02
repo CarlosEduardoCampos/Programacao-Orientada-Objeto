@@ -2,7 +2,7 @@
 
 ## Instruções
 
-Criamos em aula o objeto do carroDoTiao e carroDoJao. Criar utilizando o mжtodo construtor o carroDoZe, passando por parРmetros variрveis preenchidas via comando na console 
+Criamos em aula o objeto do carroDoTiao e carroDoJao. Criar utilizando o método construtor o carroDoZe, passando por parРmetros variáveis preenchidas via comando na console.
 
 input.nextLine().
 
@@ -11,6 +11,6 @@ System.out.print("Num. portas carro do Ze: ");
 
 int numeroPortas = Integer.parseInt(input.nextLine());
 
-Passar no construtor a variрvel.
+Passar no construtor a variável.
 
 Enviar o arquivo Fabrica.java
