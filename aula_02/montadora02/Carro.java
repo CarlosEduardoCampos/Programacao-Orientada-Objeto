@@ -1,4 +1,4 @@
-package montadora;
+package montadora02;
 import java.util.Scanner; 
 //
 public class Carro

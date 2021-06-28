@@ -1,4 +1,8 @@
-package montadora;
+package montadora02;
+
+import montadora01.Carro;
+import montadora01.toLine;
+
 //
 public class fabrica {
     // Método main para iniciar programa:
