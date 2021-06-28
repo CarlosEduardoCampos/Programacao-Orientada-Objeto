@@ -6,4 +6,4 @@
 - _**aula 01**: Classes, Objetos, Atributos e Métodos._
 - _**aula 02:** Métodos, Encapsulamentos, Construtores._
 - **aula 03:** _Atributos e Métodos estáticos._
-- **aula 04**: _Matéria ainda não vinculada._
+- **aula 04**: _Herança._
