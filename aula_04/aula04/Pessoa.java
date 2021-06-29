@@ -1,15 +1,15 @@
 package aula04;
 // objeto para gerenciamento dos dados de pessoa
 public class Pessoa {
-    // dados relevantes para o objeto pessoa
+    // Atributos do objeto
     private String email;
     private String nome;
+    private String cpf;
     private int naciDataDia;
     private int naciDataMes;
     private int naciDataAno;
-    private int cpf;
     //
-    public Pessoa(String email, String nome, int naciDataDia, int naciDataMes, int naciDataAno, int cpf)
+    public Pessoa(String email, String nome, String cpf, int naciDataDia, int naciDataMes, int naciDataAno)
     {
         this.email = email;
         this.nome = nome;
@@ -18,14 +18,14 @@ public class Pessoa {
         this.naciDataAno = naciDataAno;
         this.cpf = cpf;
     }
-    /// Metodos set
+    /// Métodos set
     public void setEmail(String email){
         this.email = email;
     }
     public void setnome(String nome) {
         this.nome = nome;
     }
-    public void setCpf(int cpf) {
+    public void setCpf(String cpf) {
         this.cpf = cpf;
     }
     public void setNaciDataDia(int naciDataDia)
@@ -40,14 +40,14 @@ public class Pessoa {
     {
         this.naciDataAno = naciDataAno;
     }
-    /// metodo get
+    /// Método get
     public String getEmail(){
         return this.email;
     }
     public String getnome() {
         return this.nome;
     }
-    public int getCpf() {
+    public String getCpf() {
         return this.cpf;
     }
     public int getNaciDataDia()

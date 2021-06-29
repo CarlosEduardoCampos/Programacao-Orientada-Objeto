@@ -1,19 +1,21 @@
 package aula04;
 // herda objeto pessoa, e gerencia os dados de funcionario
-public class Funcionario {
+public class Funcionario extends Pessoa{
+	// Atributos do objetos
     private int contratoDataDia;
     private int contratoDataMes;
     private int contratoDataAno;
     private float salario;
-    //
-    public Funcionario(int contratoDataDia, int contratoDataMes, int contratoDataAno, float salario)
+    /// Mètodo costrutor
+    public Funcionario(String nome, String email,String cpf, int dataDia, int dataMes, int dataAno, int contratoDataDia, int contratoDataMes, int contratoDataAno, float salario)
     {
+    	super(nome,email,cpf,dataDia,dataMes,dataAno);
         this.contratoDataDia = contratoDataDia;
         this.contratoDataMes = contratoDataMes;
         this.contratoDataAno = contratoDataAno;
         this.salario = salario;
     }
-    /// Metodos set
+    /// Métodos set
     public void setContratoDataDia(int contratoDataDia)
     {
         this.contratoDataDia = contratoDataDia;
