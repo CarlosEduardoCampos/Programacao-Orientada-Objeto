@@ -2,17 +2,17 @@ package aula04;
 // objeto para gerenciamento dos dados de pessoa
 public class Pessoa {
     // Atributos do objeto
-    private String email;
     private String nome;
+    private String email;
     private String cpf;
     private int naciDataDia;
     private int naciDataMes;
     private int naciDataAno;
     //
-    public Pessoa(String email, String nome, String cpf, int naciDataDia, int naciDataMes, int naciDataAno)
+    public Pessoa(String nome, String email, String cpf, int naciDataDia, int naciDataMes, int naciDataAno)
     {
-        this.email = email;
         this.nome = nome;
+        this.email = email;
         this.naciDataDia = naciDataDia;
         this.naciDataMes = naciDataMes;
         this.naciDataAno = naciDataAno;
@@ -22,7 +22,7 @@ public class Pessoa {
     public void setEmail(String email){
         this.email = email;
     }
-    public void setnome(String nome) {
+    public void setNome(String nome) {
         this.nome = nome;
     }
     public void setCpf(String cpf) {
@@ -44,7 +44,7 @@ public class Pessoa {
     public String getEmail(){
         return this.email;
     }
-    public String getnome() {
+    public String getNome() {
         return this.nome;
     }
     public String getCpf() {
@@ -62,4 +62,20 @@ public class Pessoa {
     {
         return this.naciDataAno;
     }
+    public String toString()
+    {
+    	return ">>> Pessoas : "
+    		 + " Nome      =  " + this.getNome()  + "\n"
+    		 + " E-mail    =  " + this.getEmail() + "\n"
+    		 + " Nacido em =  " + this.naciDataDia
+    		 					+ this.naciDataMes
+    		 					+ this.naciDataAno;
+    }
+    // Método que recebe os dados de todas as fariaveis
+    /*
+    public void setTodosDados()
+    {
+    	
+    }
+    */
 }

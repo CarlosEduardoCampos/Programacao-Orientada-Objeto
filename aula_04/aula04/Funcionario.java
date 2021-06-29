@@ -9,13 +9,13 @@ public class Funcionario extends Pessoa{
     /// Mètodo costrutor
     public Funcionario(String nome, String email,String cpf, int dataDia, int dataMes, int dataAno, int contratoDataDia, int contratoDataMes, int contratoDataAno, float salario)
     {
-    	super(nome,email,cpf,dataDia,dataMes,dataAno);
+    	super(nome,email,cpf,dataDia,dataMes,dataAno);// linha obrigatorias para super class
         this.contratoDataDia = contratoDataDia;
         this.contratoDataMes = contratoDataMes;
         this.contratoDataAno = contratoDataAno;
         this.salario = salario;
     }
-    /// Métodos set
+    // Métodos set
     public void setContratoDataDia(int contratoDataDia)
     {
         this.contratoDataDia = contratoDataDia;
@@ -49,4 +49,19 @@ public class Funcionario extends Pessoa{
     {
         return this.salario;
     }
+    public String toString()
+    {
+    	return "\n>>> Funcionarios : \n"
+    		 + " Nome     =  " + this.getNome()  + "\n"
+    		 + " E-mail   =  " + this.getEmail() + "\n"
+    		 + " Salario  =  R$ " + this.getSalario();
+    			
+    }
+    // Métodos aux
+    /*
+    public void setTodosDados()
+    {
+    	
+    }
+    */
 }
