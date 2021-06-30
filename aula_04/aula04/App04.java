@@ -7,8 +7,14 @@ public class App04 {
         //
         System.out.println(colaborador.toString());
         //
-        colaborador.setNome(" Nome do Funcionário ");
+        colaborador.setTodosDadosFuncionario();
         //
         System.out.println(colaborador.toString());
+        //
+        System.out.println(usuario.toString());
+        //
+        usuario.setTodosDadosPessoa();
+        //
+        System.out.println(usuario.toString());
     }
 }

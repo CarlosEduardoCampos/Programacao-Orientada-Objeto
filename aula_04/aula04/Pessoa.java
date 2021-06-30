@@ -1,6 +1,9 @@
 package aula04;
+import java.util.Scanner;
 // objeto para gerenciamento dos dados de pessoa
 public class Pessoa {
+	// Inicia objetos
+	Scanner input = new Scanner(System.in);
     // Atributos do objeto
     private String nome;
     private String email;
@@ -64,18 +67,44 @@ public class Pessoa {
     }
     public String toString()
     {
-    	return ">>> Pessoas : "
-    		 + " Nome      =  " + this.getNome()  + "\n"
-    		 + " E-mail    =  " + this.getEmail() + "\n"
-    		 + " Nacido em =  " + this.naciDataDia
-    		 					+ this.naciDataMes
-    		 					+ this.naciDataAno;
+    	return "\n>>> Pessoas : \n"
+    		+ " CPF         =  "   + this.getCpf()   + "\n" 
+       		+ " Nome        =  "   + this.getNome()  + "\n"
+       		+ " E-mail      =  "   + this.getEmail() + "\n"
+       		+ " Naceu em    =  "   + this.getNaciDataDia() + " / "
+   								   + this.getNaciDataMes() + " / "
+   								   + this.getNaciDataAno() + " \n ";
     }
-    // Método que recebe os dados de todas as fariaveis
-    /*
-    public void setTodosDados()
+    // Método que recebe os dados do objeto Pessoa
+    public void setTodosDadosPessoa()
     {
-    	
+    	System.out.print("\n");
+    	//
+    	System.out.print(" CPF: ");
+    	String cpf  = input.nextLine();
+    	setCpf(cpf);
+    	//
+    	System.out.print(" NOME: ");
+    	String nome = input.nextLine();
+    	setNome(nome);
+    	//
+    	System.out.print(" E-MAIL: ");
+    	String email = input.nextLine();
+    	setEmail(email);
+    	//
+    	int dataDia;
+    	int dataMes;
+    	int dataAno;
+		//
+		System.out.print(" DIA: ");
+		dataDia = Integer.parseInt(input.nextLine());
+		System.out.print(" MES: ");
+        dataMes = Integer.parseInt(input.nextLine());
+        System.out.print(" ANO: ");
+        dataAno = Integer.parseInt(input.nextLine());
+        //
+    	setNaciDataDia(dataDia);
+        setNaciDataMes(dataMes);
+        setNaciDataAno(dataAno);
     }
-    */
 }
