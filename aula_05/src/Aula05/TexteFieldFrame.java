@@ -20,12 +20,15 @@ public class TexteFieldFrame extends JFrame {
 	private JPasswordField txtPassword;
 	//Botoes de interação
 	private JButton btnEntrar;
+	private JButton btnOk;
+	private JButton btnSair;
 	//Costrutor
 	public TexteFieldFrame()
 	{
 		super(" Teste de formulario ");//Titulo da tela
 		//
 		setLayout(new FlowLayout());     //setando o layout do frame
+		//Adicinando elementos ao frame
 		txtField_00 = new JTextField(15);//Criando o objeto txtFiel_00
 		add(txtField_00);			     //Colocando o txtField_00 no frame
 		//Caixas de texto
@@ -42,6 +45,12 @@ public class TexteFieldFrame extends JFrame {
 		btnEntrar = new JButton(" Entrar ");
 		add(btnEntrar);
 		//
+		btnOk = new JButton("Ok? ");
+		add(btnOk);
+		//
+		btnSair = new JButton(" Sair ");
+		add(btnSair);
+		//Adicionado eventos aos componentes
 		btnEntrar.addActionListener(new ActionListener()
 		{
 			public void actionPerformed(ActionEvent e)
@@ -50,6 +59,36 @@ public class TexteFieldFrame extends JFrame {
 				JOptionPane.showMessageDialog(null,"Mensagem do Botão");
 			}
 		});
+		//
+		btnOk.addActionListener(new ActionListener()
+		{
+			@Override
+			public void actionPerformed(ActionEvent e)
+			{
+				/*
+				 	Cria uma janela de aviso apos click no botao ok?
+				 	essa opção mostra uma tela de aviso com botoes 	yes ou no
+				 	yes retorna o valor 0
+				 	no retorna o valor 1
+				*/
+				if(JOptionPane.showConfirmDialog
+					(
+					null,
+					" Não esta ok? ",
+					" Título da msg ",
+					JOptionPane.YES_NO_OPTION,
+					JOptionPane.QUESTION_MESSAGE
+					) == 0 )
+				{
+					//YES
+					JOptionPane.showMessageDialog(null, " Não está ok :´( ");
+				}else {
+					//NO
+					JOptionPane.showMessageDialog(null, " Está ok!!! ");
+				}
+			}
+		});
+		//
 		txtField_00.addActionListener(new ActionListener()
 		{
 			public void actionPerformed(ActionEvent e)
@@ -60,18 +99,26 @@ public class TexteFieldFrame extends JFrame {
 				JOptionPane.showMessageDialog(null, " O texto do Field_00: " + txt);
 			}
 		});
+		//
 		txtPassword.addActionListener(new ActionListener()
 		{
 			@Override
-			public void actionPerformed(ActionEvent e) {
-				
+			public void actionPerformed(ActionEvent e) 
+			{	
 				//Variavel recebe o valor que esta em txtFild_00
 				String txt = String.format("%s", txtPassword.getText());
 				//Joga na tela a menssagem quando aperta enter
 				JOptionPane.showMessageDialog(null, " O texto do Password: " + txt);
 			}
-			
 		});
-		
+		//
+		btnSair.addActionListener(new ActionListener()
+		{
+			@Override
+			public void actionPerformed(ActionEvent e)
+			{
+				dispose();
+			}
+		});
 	}
 }
