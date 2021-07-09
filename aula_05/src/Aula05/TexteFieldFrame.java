@@ -18,7 +18,7 @@ public class TexteFieldFrame extends JFrame {
 	private JTextField txtField_02;
 	//Caixa de texto senha
 	private JPasswordField txtPassword;
-	//Botoes de interação
+	//Botoes de interaï¿½ï¿½o
 	private JButton btnEntrar;
 	private JButton btnOk;
 	private JButton btnSair;
@@ -36,12 +36,12 @@ public class TexteFieldFrame extends JFrame {
 		add(txtField_01); //Colocando o txtField2 no frameaa
 		//
 		txtField_02 = new JTextField("Campo desabilitado", 15);
-		txtField_02.setEnabled(false);//Desabilita a introdução de texto
+		txtField_02.setEnabled(false);//Desabilita a introduï¿½ï¿½o de texto
 		add(txtField_02);
 		//Caixa de text senha
 		txtPassword = new JPasswordField("Minha senha", 15);
 		add(txtPassword);
-		//Botoes de interação
+		//Botoes de interaï¿½ï¿½o
 		btnEntrar = new JButton(" Entrar ");
 		add(btnEntrar);
 		//
@@ -56,7 +56,7 @@ public class TexteFieldFrame extends JFrame {
 			public void actionPerformed(ActionEvent e)
 			{
 				//Cria uma janela de aviso apos click no botao Entrar
-				JOptionPane.showMessageDialog(null,"Mensagem do Botão");
+				JOptionPane.showMessageDialog(null,"Mensagem do Botï¿½o");
 			}
 		});
 		//
@@ -67,24 +67,24 @@ public class TexteFieldFrame extends JFrame {
 			{
 				/*
 				 	Cria uma janela de aviso apos click no botao ok?
-				 	essa opção mostra uma tela de aviso com botoes 	yes ou no
+				 	essa opï¿½ï¿½o mostra uma tela de aviso com botoes 	yes ou no
 				 	yes retorna o valor 0
 				 	no retorna o valor 1
 				*/
 				if(JOptionPane.showConfirmDialog
 					(
 					null,
-					" Não esta ok? ",
-					" Título da msg ",
+					" Nï¿½o esta ok? ",
+					" Tï¿½tulo da msg ",
 					JOptionPane.YES_NO_OPTION,
 					JOptionPane.QUESTION_MESSAGE
 					) == 0 )
 				{
 					//YES
-					JOptionPane.showMessageDialog(null, " Não está ok :´( ");
+					JOptionPane.showMessageDialog(null, " Nï¿½o estï¿½ ok :ï¿½( ");
 				}else {
 					//NO
-					JOptionPane.showMessageDialog(null, " Está ok!!! ");
+					JOptionPane.showMessageDialog(null, " Estï¿½ ok!!! ");
 				}
 			}
 		});
