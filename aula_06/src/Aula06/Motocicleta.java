@@ -1,5 +1,4 @@
-package src.Aula64;
-
+package Aula06;
 //Na locadora o aluguelde motocicleta tem desconto de x% n diária
 public class Motocicleta extends Veiculo
 {   
@@ -16,22 +15,23 @@ public class Motocicleta extends Veiculo
     }
 
     //GET SET
+    ///Valor da diaria
     public float getValorDiaria() {
         return valorDiaria;
     }
-    public float getValorDesconto() {
-        return valorDesconto;
-    }
     public void setValorDiaria(float valorDiaria) {
         this.valorDiaria = valorDiaria;
+    }
+    ///Valor do Desconto (%)
+    public float getValorDesconto() {
+        return valorDesconto;
     }
     public void setValorDesconto(float valorDesconto) {
         this.valorDesconto = valorDesconto;
     }
 
-    //Método
     public float calcularAluguel(int numDia)
     {
-        return this.valorDiaria * numDia - (this.valorDiaria * numDia * 10 / 100);
+        return this.valorDiaria * numDia - (this.valorDiaria * numDia * (this.valorDesconto / 100));
     }
 }

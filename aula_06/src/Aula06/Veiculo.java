@@ -1,4 +1,4 @@
-package src.Aula64;
+package Aula06;
 /* Tipo generico de class
  todo metodo e placa. <==Herança
 */
@@ -15,13 +15,14 @@ public abstract class Veiculo {
     }
 
     //GET SET
+    ///Modelo
     public String getModelo() {
         return modelo;
     }
     public void setModelo(String modelo) {
         this.modelo = modelo;
     }
-    //
+    ///Placa
     public String getPlaca() {
         return placa;
     }
@@ -35,5 +36,5 @@ public abstract class Veiculo {
      * - Toda class que herdar essa class e obrigado a criar o método 
      * cacularAluquel(int numDia) e adicionar a lógica.(Regra de negócio)
     */
-    public abstract float cacularAluguel(int numDia);
+    public abstract float calcularAluguel(int numDia);
 }

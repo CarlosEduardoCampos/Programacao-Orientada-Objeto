@@ -1,5 +1,4 @@
-package Aula64;
-
+package Aula06;
 public class Caminhonete extends Veiculo
 {
     private float valorDiario;
