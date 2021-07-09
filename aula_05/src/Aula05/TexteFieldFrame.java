@@ -106,7 +106,7 @@ public class TexteFieldFrame extends JFrame {
 			public void actionPerformed(ActionEvent e) 
 			{	
 				//Variavel recebe o valor que esta em txtFild_00
-				String txt = String.format("%s", txtPassword.getText());
+				String txt = String.format("%s", txtPassword);
 				//Joga na tela a menssagem quando aperta enter
 				JOptionPane.showMessageDialog(null, " O texto do Password: " + txt);
 			}
