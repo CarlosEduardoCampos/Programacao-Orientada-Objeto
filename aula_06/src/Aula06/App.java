@@ -49,7 +49,7 @@ public class App {
     		conexaoBD = new ConexaoSQLServer();
     	}
     	conexaoBD.conectar("servidor");
-    	conexaoBD.executar("SELECIONE * TABELA_X");
+    	conexaoBD.executar("SELECIONE * FROM TABELA_X");
     	conexaoBD.desconectar("servidor");
     }
 }
