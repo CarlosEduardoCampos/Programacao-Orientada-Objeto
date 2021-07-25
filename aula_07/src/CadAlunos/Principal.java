@@ -6,13 +6,13 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.GroupLayout;
+import javax.swing.GroupLayout.Alignment;
 import javax.swing.JDesktopPane;
 import javax.swing.JFrame;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.UIManager;
-import javax.swing.GroupLayout.Alignment;
 
 public class Principal extends JFrame {
 	
@@ -23,6 +23,7 @@ public class Principal extends JFrame {
 	private JMenuBar jMenuBar;
 	private JMenuItem jMenuItem1;
 	private JMenuItem jMenuItem2;
+	private JMenuItem jMenuItem3;
 	private GroupLayout jDesktopPaneLayout;
 	
 	//Construtor
@@ -34,6 +35,7 @@ public class Principal extends JFrame {
         jMenuBar = new JMenuBar();        
         jMenuItem1 = new JMenuItem();
         jMenuItem2 = new JMenuItem();
+        jMenuItem3 = new JMenuItem();
         
         //tratamentos de tela:
         setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -76,6 +78,8 @@ public class Principal extends JFrame {
         jMenuBar.add(jMenu1);
         
         jMenu2.setText("Editar");
+        jMenuItem3.setText("Copiar");
+        jMenu2.add(jMenuItem3);
         jMenuBar.add(jMenu2);
         setJMenuBar(jMenuBar);
         
