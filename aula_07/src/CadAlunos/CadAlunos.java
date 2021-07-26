@@ -224,6 +224,10 @@ public class CadAlunos extends JInternalFrame
 				}else {
 					JOptionPane.showMessageDialog(null, "Sua lista ainda esta vazia!");
 				}
+				if(proximo > qteAlunos)
+				{
+					JOptionPane.showMessageDialog(null, "Não existe mais cadatros!");
+				}
 			}
 		});
         
@@ -234,19 +238,22 @@ public class CadAlunos extends JInternalFrame
 			{
 				//Criar rotina de anterior
 				int anterior = 0;
-				
-				if(txtCodigo.getText().length() == 0) {
+				if(Integer.parseInt(txtCodigo.getText()) <= 0)
+				{
+					JOptionPane.showMessageDialog(null, "Você já chegou ao inicio!");
+				}
+				else if(txtCodigo.getText().length() == 0 ){
 					JOptionPane.showMessageDialog(null, "Lista não iniciada!");
 				}
 				else {
 					anterior = Integer.parseInt(txtCodigo.getText()) - 1;
-					if(anterior <= qteAlunos && anterior >= 0) 
+					if(anterior <= qteAlunos) 
 					{
 						txtCodigo.setText(String.valueOf(anterior));
 					
 					}
 					//pesquisar no vetor:
-					if(Integer.parseInt(txtCodigo.getText()) <= 0) 
+					if(Integer.parseInt(txtCodigo.getText()) >= 0) 
 					{
 						int codigo = Integer.parseInt(txtCodigo.getText());
 						modelo.Aluno aluno = alunos[codigo]; //busco do BD
@@ -309,6 +316,7 @@ public class CadAlunos extends JInternalFrame
 	
 	/**
 	 * Verifica se exite algum campo digitado
+	 * @return true ou false
 	 */
 	private boolean existeDados() 
 	{
