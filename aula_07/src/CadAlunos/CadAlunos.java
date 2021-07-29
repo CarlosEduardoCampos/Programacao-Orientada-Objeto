@@ -273,6 +273,7 @@ public class CadAlunos extends JInternalFrame
 				if(existeDados())
 				{
 					limparTela();//limpas as informações
+					txtCodigo.setText("");
 				}
 				else {
 					JOptionPane.showMessageDialog(null, "Os campos estâo vazios, novo cadastro ja e possivel!");
