@@ -1,4 +1,5 @@
-﻿using System;
+﻿using cadastrarMedalhas.model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,19 +13,15 @@ namespace cadastrarMedalhas
 {
     public partial class Form1 : Form
     {
+        BancoDados dataBase = new BancoDados("localhost","pass1386","bd_cadMedalhas");
         public Form1()
         {
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void btnOk_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
+            
         }
     }
 }

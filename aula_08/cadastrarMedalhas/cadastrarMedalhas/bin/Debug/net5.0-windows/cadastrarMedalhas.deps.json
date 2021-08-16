@@ -9,6 +9,11 @@
       "cadastrarMedalhas/1.0.0": {
         "runtime": {
           "cadastrarMedalhas.dll": {}
+        },
+        "resources": {
+          "pt/cadastrarMedalhas.resources.dll": {
+            "locale": "pt"
+          }
         }
       }
     }
