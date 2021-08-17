@@ -16,6 +16,42 @@ public class BancoDados
 		this.user = user;
 		this.passWord = passWord;
 	}
+
+	//parametro porta padrão 3306
+	//todos os dados menos porta seram passados na chamado do objeto
+	public BancoDados(string host, string usuario, string senha, string dataBase)
+	{//inicio executavel
+		this.host     = host;
+		this.usuario  = usuario;
+		this.senha    = senha;
+		this.dataBase = dataBase;
+		this.porta    = 3306;
+	}//fim executavel
+
+	//parametro porta padrão 3306
+	//parametro usuario padrão root
+	//todos os dados menos porta e usuario seram passados na chamada do objeto
+	public BancoDados( string host, string senha, string dataBase)
+	{//inicio executavel
+		this.host     = host;
+		this.usuario  = "root";
+		this.senha    = senha;
+		this.dataBase = dataBase;
+		this.porta    = 3306;
+	}//fim executavel
+
+	//parametro porta padrão 3306
+	//parametro usuario padrão root
+	//parametro senha padrão root
+	//Na chamada do objeto e necessario infomar somente host e dataBase
+	public BancoDados( string host, string dataBase)
+	{//inicio executavel
+		this.host     = host;
+		this.usuario  = "root";
+		this.senha    = "root";
+		this.dataBase = dataBase;
+		this.porta    = 3306;
+	}//fim executavel
 	
 	//GETS END SETS HOST
 	public String getLocalHost() {
@@ -48,6 +84,18 @@ public class BancoDados
 	public void setPassWord(String passWord) {
 		this.passWord = passWord;
 	}
+
+	//Metodos
+	public string ToString()
+	{
+		return (
+			"Host:     " + this.host     +"\n"+
+			"Usuario:  " + this.usuario  +"\n"+
+			"Senha:    " + this.senha    +"\n"+
+			"DataBase: " + this.dataBase +"\n"+
+			"Porta:    " + this.porta    +"\n"
+		);
+	}//fim função ToString()	
 	
 	@SuppressWarnings("unused")
 	public void conexao()
