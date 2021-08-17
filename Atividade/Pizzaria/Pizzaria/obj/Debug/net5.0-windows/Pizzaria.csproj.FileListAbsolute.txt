@@ -16,3 +16,12 @@ C:\Users\Carlos\Desktop\projetosjv\Atividade\Pizzaria\Pizzaria\obj\Debug\net5.0-
 C:\Users\Carlos\Desktop\projetosjv\Atividade\Pizzaria\Pizzaria\obj\Debug\net5.0-windows\ref\Pizzaria.dll
 C:\Users\Carlos\Desktop\projetosjv\Atividade\Pizzaria\Pizzaria\obj\Debug\net5.0-windows\Pizzaria.pdb
 C:\Users\Carlos\Desktop\projetosjv\Atividade\Pizzaria\Pizzaria\obj\Debug\net5.0-windows\Pizzaria.genruntimeconfig.cache
+C:\Users\Carlos\Desktop\projetosjv\Atividade\Pizzaria\Pizzaria\bin\Debug\net5.0-windows\BouncyCastle.Crypto.dll
+C:\Users\Carlos\Desktop\projetosjv\Atividade\Pizzaria\Pizzaria\bin\Debug\net5.0-windows\Google.Protobuf.dll
+C:\Users\Carlos\Desktop\projetosjv\Atividade\Pizzaria\Pizzaria\bin\Debug\net5.0-windows\K4os.Compression.LZ4.dll
+C:\Users\Carlos\Desktop\projetosjv\Atividade\Pizzaria\Pizzaria\bin\Debug\net5.0-windows\K4os.Compression.LZ4.Streams.dll
+C:\Users\Carlos\Desktop\projetosjv\Atividade\Pizzaria\Pizzaria\bin\Debug\net5.0-windows\K4os.Hash.xxHash.dll
+C:\Users\Carlos\Desktop\projetosjv\Atividade\Pizzaria\Pizzaria\bin\Debug\net5.0-windows\MySql.Data.dll
+C:\Users\Carlos\Desktop\projetosjv\Atividade\Pizzaria\Pizzaria\bin\Debug\net5.0-windows\Ubiety.Dns.Core.dll
+C:\Users\Carlos\Desktop\projetosjv\Atividade\Pizzaria\Pizzaria\bin\Debug\net5.0-windows\Zstandard.Net.dll
+C:\Users\Carlos\Desktop\projetosjv\Atividade\Pizzaria\Pizzaria\obj\Debug\net5.0-windows\Pizzaria.csproj.CopyComplete

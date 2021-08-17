@@ -12,7 +12,5 @@ namespace Pizzaria.model
         public bool Conectar(BancoDados infoData);
         public MySqlConnection Executar(string sql);
         public bool Desconectar();
-
-
     }
 }
