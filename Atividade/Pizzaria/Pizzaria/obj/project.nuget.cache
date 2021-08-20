@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "2iiHCTuIxTD6Fr20DkvblLtzHfR3jrT67FWQ64dIqPjG7G0dFQKS3D+LTUCwG0dxzE+uPfdnvZni3nVt4iI5VQ==",
+  "dgSpecHash": "eECQ4CPVpdnfcPB1NL5hMV5qDXAaov4lMbfDz9Ix5ykDBVybOHKC8l07kuzwJBibsIZAYLq9YEbOxJFnxYGBOg==",
   "success": true,
   "projectFilePath": "C:\\Users\\Carlos\\Desktop\\projetosjv\\Atividade\\Pizzaria\\Pizzaria\\Pizzaria.csproj",
   "expectedPackageFiles": [
@@ -12,6 +12,11 @@
     "C:\\Users\\Carlos\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
     "C:\\Users\\Carlos\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
     "C:\\Users\\Carlos\\.nuget\\packages\\mysql.data\\8.0.26\\mysql.data.8.0.26.nupkg.sha512",
+    "C:\\Users\\Carlos\\.nuget\\packages\\syncfusion.licensing\\19.2.0.56\\syncfusion.licensing.19.2.0.56.nupkg.sha512",
+    "C:\\Users\\Carlos\\.nuget\\packages\\syncfusion.xamarin.core\\19.2.0.56\\syncfusion.xamarin.core.19.2.0.56.nupkg.sha512",
+    "C:\\Users\\Carlos\\.nuget\\packages\\syncfusion.xamarin.datasource\\19.2.0.56\\syncfusion.xamarin.datasource.19.2.0.56.nupkg.sha512",
+    "C:\\Users\\Carlos\\.nuget\\packages\\syncfusion.xamarin.gridcommon\\19.2.0.56\\syncfusion.xamarin.gridcommon.19.2.0.56.nupkg.sha512",
+    "C:\\Users\\Carlos\\.nuget\\packages\\syncfusion.xamarin.sflistview\\19.2.0.56\\syncfusion.xamarin.sflistview.19.2.0.56.nupkg.sha512",
     "C:\\Users\\Carlos\\.nuget\\packages\\system.buffers\\4.5.1\\system.buffers.4.5.1.nupkg.sha512",
     "C:\\Users\\Carlos\\.nuget\\packages\\system.configuration.configurationmanager\\4.4.1\\system.configuration.configurationmanager.4.4.1.nupkg.sha512",
     "C:\\Users\\Carlos\\.nuget\\packages\\system.drawing.common\\4.7.0\\system.drawing.common.4.7.0.nupkg.sha512",
@@ -22,7 +27,8 @@
     "C:\\Users\\Carlos\\.nuget\\packages\\system.security.permissions\\4.7.0\\system.security.permissions.4.7.0.nupkg.sha512",
     "C:\\Users\\Carlos\\.nuget\\packages\\system.security.principal.windows\\4.7.0\\system.security.principal.windows.4.7.0.nupkg.sha512",
     "C:\\Users\\Carlos\\.nuget\\packages\\system.text.encoding.codepages\\4.4.0\\system.text.encoding.codepages.4.4.0.nupkg.sha512",
-    "C:\\Users\\Carlos\\.nuget\\packages\\system.windows.extensions\\4.7.0\\system.windows.extensions.4.7.0.nupkg.sha512"
+    "C:\\Users\\Carlos\\.nuget\\packages\\system.windows.extensions\\4.7.0\\system.windows.extensions.4.7.0.nupkg.sha512",
+    "C:\\Users\\Carlos\\.nuget\\packages\\xamarin.forms\\4.5.0.617\\xamarin.forms.4.5.0.617.nupkg.sha512"
   ],
   "logs": []
 }

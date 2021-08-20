@@ -25,3 +25,12 @@ C:\Users\Carlos\Desktop\projetosjv\Atividade\Pizzaria\Pizzaria\bin\Debug\net5.0-
 C:\Users\Carlos\Desktop\projetosjv\Atividade\Pizzaria\Pizzaria\bin\Debug\net5.0-windows\Ubiety.Dns.Core.dll
 C:\Users\Carlos\Desktop\projetosjv\Atividade\Pizzaria\Pizzaria\bin\Debug\net5.0-windows\Zstandard.Net.dll
 C:\Users\Carlos\Desktop\projetosjv\Atividade\Pizzaria\Pizzaria\obj\Debug\net5.0-windows\Pizzaria.csproj.CopyComplete
+C:\Users\Carlos\Desktop\projetosjv\Atividade\Pizzaria\Pizzaria\bin\Debug\net5.0-windows\Syncfusion.Licensing.dll
+C:\Users\Carlos\Desktop\projetosjv\Atividade\Pizzaria\Pizzaria\bin\Debug\net5.0-windows\Syncfusion.Core.XForms.dll
+C:\Users\Carlos\Desktop\projetosjv\Atividade\Pizzaria\Pizzaria\bin\Debug\net5.0-windows\Syncfusion.DataSource.Portable.dll
+C:\Users\Carlos\Desktop\projetosjv\Atividade\Pizzaria\Pizzaria\bin\Debug\net5.0-windows\Syncfusion.GridCommon.Portable.dll
+C:\Users\Carlos\Desktop\projetosjv\Atividade\Pizzaria\Pizzaria\bin\Debug\net5.0-windows\Syncfusion.SfListView.XForms.dll
+C:\Users\Carlos\Desktop\projetosjv\Atividade\Pizzaria\Pizzaria\bin\Debug\net5.0-windows\Xamarin.Forms.Core.dll
+C:\Users\Carlos\Desktop\projetosjv\Atividade\Pizzaria\Pizzaria\bin\Debug\net5.0-windows\Xamarin.Forms.Platform.dll
+C:\Users\Carlos\Desktop\projetosjv\Atividade\Pizzaria\Pizzaria\bin\Debug\net5.0-windows\Xamarin.Forms.Xaml.dll
+C:\Users\Carlos\Desktop\projetosjv\Atividade\Pizzaria\Pizzaria\obj\Debug\net5.0-windows\XamlC.stamp

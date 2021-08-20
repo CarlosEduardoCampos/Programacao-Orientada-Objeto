@@ -9,14 +9,16 @@ namespace Pizzaria.model
     class Pizza
     {
         //Atributos
+        private int id              { get; set; }
         private string nomePizza    { get; set; }
         private string ingredientes { get; set; }
         private float valorBroto    { get; set; }
         private float valorMedia    { get; set; }
 
         //Costrutor
-        public Pizza(string nome, string ingredientes, float valorBroto, float valorMedia)
+        public Pizza(int id, string nome, string ingredientes, float valorBroto, float valorMedia)
         {
+            this.id           = id;
             this.nomePizza    = nome;
             this.ingredientes = ingredientes;
             this.valorBroto   = valorBroto;

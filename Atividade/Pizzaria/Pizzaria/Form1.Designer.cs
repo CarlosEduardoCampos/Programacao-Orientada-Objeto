@@ -29,168 +29,118 @@ namespace Pizzaria
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.lbNomeP = new System.Windows.Forms.Label();
-            this.lbIngredientes = new System.Windows.Forms.Label();
-            this.lbValorPB = new System.Windows.Forms.Label();
-            this.lbValorPM = new System.Windows.Forms.Label();
-            this.txtNameP = new System.Windows.Forms.TextBox();
-            this.textIngredientes = new System.Windows.Forms.TextBox();
-            this.intValorB = new System.Windows.Forms.NumericUpDown();
-            this.intValorM = new System.Windows.Forms.NumericUpDown();
+            this.btnLimpar = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.cadastroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.novoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.editarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            ((System.ComponentModel.ISupportInitialize)(this.intValorB)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.intValorM)).BeginInit();
-            this.menuStrip1.SuspendLayout();
+            this.textIngredientes = new System.Windows.Forms.TextBox();
+            this.txtNameP = new System.Windows.Forms.TextBox();
+            this.lbValorPM = new System.Windows.Forms.Label();
+            this.lbValorPB = new System.Windows.Forms.Label();
+            this.lbIngredientes = new System.Windows.Forms.Label();
+            this.lbNomeP = new System.Windows.Forms.Label();
+            this.intValorB = new System.Windows.Forms.TextBox();
+            this.IntValorM = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
-            // lbNomeP
+            // btnLimpar
             // 
-            this.lbNomeP.AutoSize = true;
-            this.lbNomeP.Location = new System.Drawing.Point(15, 53);
-            this.lbNomeP.Name = "lbNomeP";
-            this.lbNomeP.Size = new System.Drawing.Size(69, 15);
-            this.lbNomeP.TabIndex = 0;
-            this.lbNomeP.Text = "Nome Pizza";
+            this.btnLimpar.Location = new System.Drawing.Point(104, 150);
+            this.btnLimpar.Name = "btnLimpar";
+            this.btnLimpar.Size = new System.Drawing.Size(74, 31);
+            this.btnLimpar.TabIndex = 19;
+            this.btnLimpar.Text = "Limpar";
+            this.btnLimpar.UseVisualStyleBackColor = true;
+            this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
             // 
-            // lbIngredientes
+            // button1
             // 
-            this.lbIngredientes.AutoSize = true;
-            this.lbIngredientes.Location = new System.Drawing.Point(12, 96);
-            this.lbIngredientes.Name = "lbIngredientes";
-            this.lbIngredientes.Size = new System.Drawing.Size(72, 15);
-            this.lbIngredientes.TabIndex = 1;
-            this.lbIngredientes.Text = "Ingredientes";
+            this.button1.Location = new System.Drawing.Point(24, 150);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(74, 31);
+            this.button1.TabIndex = 18;
+            this.button1.Text = "Cadastrar";
+            this.button1.UseVisualStyleBackColor = true;
             // 
-            // lbValorPB
+            // textIngredientes
             // 
-            this.lbValorPB.AutoSize = true;
-            this.lbValorPB.Location = new System.Drawing.Point(10, 142);
-            this.lbValorPB.Name = "lbValorPB";
-            this.lbValorPB.Size = new System.Drawing.Size(94, 15);
-            this.lbValorPB.TabIndex = 2;
-            this.lbValorPB.Text = "Valor Pizza Broto";
+            this.textIngredientes.Location = new System.Drawing.Point(184, 36);
+            this.textIngredientes.Name = "textIngredientes";
+            this.textIngredientes.Size = new System.Drawing.Size(244, 23);
+            this.textIngredientes.TabIndex = 17;
+            // 
+            // txtNameP
+            // 
+            this.txtNameP.Location = new System.Drawing.Point(24, 36);
+            this.txtNameP.Name = "txtNameP";
+            this.txtNameP.Size = new System.Drawing.Size(154, 23);
+            this.txtNameP.TabIndex = 16;
             // 
             // lbValorPM
             // 
             this.lbValorPM.AutoSize = true;
-            this.lbValorPM.Location = new System.Drawing.Point(6, 185);
+            this.lbValorPM.Location = new System.Drawing.Point(142, 75);
             this.lbValorPM.Name = "lbValorPM";
             this.lbValorPM.Size = new System.Drawing.Size(98, 15);
-            this.lbValorPM.TabIndex = 3;
+            this.lbValorPM.TabIndex = 15;
             this.lbValorPM.Text = "Valor Pizza Media";
             // 
-            // txtNameP
+            // lbValorPB
             // 
-            this.txtNameP.Location = new System.Drawing.Point(90, 50);
-            this.txtNameP.Name = "txtNameP";
-            this.txtNameP.Size = new System.Drawing.Size(116, 23);
-            this.txtNameP.TabIndex = 4;
+            this.lbValorPB.AutoSize = true;
+            this.lbValorPB.Location = new System.Drawing.Point(24, 75);
+            this.lbValorPB.Name = "lbValorPB";
+            this.lbValorPB.Size = new System.Drawing.Size(94, 15);
+            this.lbValorPB.TabIndex = 14;
+            this.lbValorPB.Text = "Valor Pizza Broto";
             // 
-            // textIngredientes
+            // lbIngredientes
             // 
-            this.textIngredientes.Location = new System.Drawing.Point(90, 93);
-            this.textIngredientes.Name = "textIngredientes";
-            this.textIngredientes.Size = new System.Drawing.Size(180, 23);
-            this.textIngredientes.TabIndex = 5;
+            this.lbIngredientes.AutoSize = true;
+            this.lbIngredientes.Location = new System.Drawing.Point(184, 18);
+            this.lbIngredientes.Name = "lbIngredientes";
+            this.lbIngredientes.Size = new System.Drawing.Size(72, 15);
+            this.lbIngredientes.TabIndex = 13;
+            this.lbIngredientes.Text = "Ingredientes";
+            // 
+            // lbNomeP
+            // 
+            this.lbNomeP.AutoSize = true;
+            this.lbNomeP.Location = new System.Drawing.Point(24, 18);
+            this.lbNomeP.Name = "lbNomeP";
+            this.lbNomeP.Size = new System.Drawing.Size(69, 15);
+            this.lbNomeP.TabIndex = 12;
+            this.lbNomeP.Text = "Nome Pizza";
             // 
             // intValorB
             // 
-            this.intValorB.Location = new System.Drawing.Point(110, 140);
+            this.intValorB.Location = new System.Drawing.Point(24, 93);
             this.intValorB.Name = "intValorB";
-            this.intValorB.Size = new System.Drawing.Size(69, 23);
-            this.intValorB.TabIndex = 6;
+            this.intValorB.Size = new System.Drawing.Size(94, 23);
+            this.intValorB.TabIndex = 20;
             // 
-            // intValorM
+            // IntValorM
             // 
-            this.intValorM.Location = new System.Drawing.Point(110, 183);
-            this.intValorM.Name = "intValorM";
-            this.intValorM.Size = new System.Drawing.Size(69, 23);
-            this.intValorM.TabIndex = 7;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(134, 330);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(85, 30);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "Cadastrar";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // menuStrip1
-            // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.cadastroToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(327, 24);
-            this.menuStrip1.TabIndex = 9;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // cadastroToolStripMenuItem
-            // 
-            this.cadastroToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.novoToolStripMenuItem,
-            this.editarToolStripMenuItem,
-            this.toolStripSeparator1,
-            this.sairToolStripMenuItem});
-            this.cadastroToolStripMenuItem.Name = "cadastroToolStripMenuItem";
-            this.cadastroToolStripMenuItem.Size = new System.Drawing.Size(66, 20);
-            this.cadastroToolStripMenuItem.Text = "Cadastro";
-            // 
-            // novoToolStripMenuItem
-            // 
-            this.novoToolStripMenuItem.Name = "novoToolStripMenuItem";
-            this.novoToolStripMenuItem.Size = new System.Drawing.Size(104, 22);
-            this.novoToolStripMenuItem.Text = "Novo";
-            // 
-            // editarToolStripMenuItem
-            // 
-            this.editarToolStripMenuItem.Name = "editarToolStripMenuItem";
-            this.editarToolStripMenuItem.Size = new System.Drawing.Size(104, 22);
-            this.editarToolStripMenuItem.Text = "Editar";
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(101, 6);
-            // 
-            // sairToolStripMenuItem
-            // 
-            this.sairToolStripMenuItem.Name = "sairToolStripMenuItem";
-            this.sairToolStripMenuItem.Size = new System.Drawing.Size(104, 22);
-            this.sairToolStripMenuItem.Text = "Sair";
+            this.IntValorM.Location = new System.Drawing.Point(142, 93);
+            this.IntValorM.Name = "IntValorM";
+            this.IntValorM.Size = new System.Drawing.Size(98, 23);
+            this.IntValorM.TabIndex = 21;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(327, 372);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.intValorM);
+            this.ClientSize = new System.Drawing.Size(473, 208);
+            this.Controls.Add(this.IntValorM);
             this.Controls.Add(this.intValorB);
+            this.Controls.Add(this.btnLimpar);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.textIngredientes);
             this.Controls.Add(this.txtNameP);
             this.Controls.Add(this.lbValorPM);
             this.Controls.Add(this.lbValorPB);
             this.Controls.Add(this.lbIngredientes);
             this.Controls.Add(this.lbNomeP);
-            this.Controls.Add(this.menuStrip1);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
-            this.Text = "Pizzaria";
-            ((System.ComponentModel.ISupportInitialize)(this.intValorB)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.intValorM)).EndInit();
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
+            this.Text = "Form1";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -198,20 +148,15 @@ namespace Pizzaria
 
         #endregion
 
-        private System.Windows.Forms.Label lbNomeP;
-        private System.Windows.Forms.Label lbIngredientes;
-        private System.Windows.Forms.Label lbValorPB;
-        private System.Windows.Forms.Label lbValorPM;
-        private System.Windows.Forms.TextBox txtNameP;
-        private System.Windows.Forms.TextBox textIngredientes;
-        private System.Windows.Forms.NumericUpDown intValorB;
-        private System.Windows.Forms.NumericUpDown intValorM;
+        private System.Windows.Forms.Button btnLimpar;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem cadastroToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem novoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem editarToolStripMenuItem;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-        private System.Windows.Forms.ToolStripMenuItem sairToolStripMenuItem;
+        private System.Windows.Forms.TextBox textIngredientes;
+        private System.Windows.Forms.TextBox txtNameP;
+        private System.Windows.Forms.Label lbValorPM;
+        private System.Windows.Forms.Label lbValorPB;
+        private System.Windows.Forms.Label lbIngredientes;
+        private System.Windows.Forms.Label lbNomeP;
+        private System.Windows.Forms.TextBox intValorB;
+        private System.Windows.Forms.TextBox IntValorM;
     }
 }

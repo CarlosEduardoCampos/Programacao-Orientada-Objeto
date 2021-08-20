@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <PackageReference Include="MySql.Data" Version="8.0.26" />
+    <PackageReference Include="Syncfusion.Xamarin.SfListView" Version="19.2.0.56" />
   </ItemGroup>
 
 </Project>
