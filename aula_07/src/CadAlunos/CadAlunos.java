@@ -2,6 +2,7 @@ package CadAlunos;
 
 import  java.awt.event.ActionEvent ;
 import  java.awt.event.ActionListener ;
+import java.sql.Connection;
 
 import  javax.swing.GroupLayout ;
 import  javax.swing.JButton ;
@@ -11,6 +12,8 @@ import  javax.swing.JOptionPane ;
 import  javax.swing.JSpinner ;
 import  javax.swing.JTextField ;
 import  javax.swing.LayoutStyle ;
+
+import controllers.ConexaoBD;
 import  modelo.Aluno ;
 import modelo.BancoDados;
 
@@ -35,8 +38,9 @@ public class CadAlunos extends JInternalFrame
 	private  JButton btnAnterior;
 	
 	//modelo.BancoDados infoData = new BancoDados("localhost",3306,"root","pass1386");
-	//modelo.BancoDados infoData = new BancoDados("localhost",3306,"root","pass1386");
-	
+	BancoDados infoData = new BancoDados("localhost",3306,"root","pass1386");
+	//
+	//
 	modelo.Aluno alunos [] =  new  modelo.Aluno [ 5 ];
 	int qteAlunos =  - 1 ; // controle de inserções.	
 	
@@ -168,13 +172,19 @@ public class CadAlunos extends JInternalFrame
         
         //ações de botões:
         btnGravarRegistro.addActionListener(new ActionListener() 
-        {			
+        {
 			@Override
 			public void actionPerformed(ActionEvent arg0) 
 			{
+				Connection connection = new ConexaoBD(infoData).conectar();
+				System.out.println("Conexão aberta!");
+				connection.close();
+				
 				//validar a tela				
 				if(validarTela()) 
 				{
+					this.conexao.conectar();
+					
 					//verificar posição do vetor
 					if(qteAlunos <= 3) 
 					{
