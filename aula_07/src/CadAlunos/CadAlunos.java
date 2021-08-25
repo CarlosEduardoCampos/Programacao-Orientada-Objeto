@@ -12,6 +12,7 @@ import  javax.swing.JSpinner ;
 import  javax.swing.JTextField ;
 import  javax.swing.LayoutStyle ;
 import  modelo.Aluno ;
+import modelo.BancoDados;
 
 public class CadAlunos extends JInternalFrame 
 {
@@ -32,6 +33,9 @@ public class CadAlunos extends JInternalFrame
 	private  JButton btnGravarRegistro;
 	private  JButton btnProximo;
 	private  JButton btnAnterior;
+	
+	//modelo.BancoDados infoData = new BancoDados("localhost",3306,"root","pass1386");
+	//modelo.BancoDados infoData = new BancoDados("localhost",3306,"root","pass1386");
 	
 	modelo.Aluno alunos [] =  new  modelo.Aluno [ 5 ];
 	int qteAlunos =  - 1 ; // controle de inserções.	

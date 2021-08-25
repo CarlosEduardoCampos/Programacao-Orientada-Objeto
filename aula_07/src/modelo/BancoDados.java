@@ -3,6 +3,7 @@ package modelo;
 public class BancoDados
 {
 	//Atributos
+	private String dataBase;
 	private String localHost;
 	private String passWord;
 	private String user;
@@ -19,11 +20,11 @@ public class BancoDados
 
 	//parametro porta padrão 3306
 	//todos os dados menos porta seram passados na chamado do objeto
-	public BancoDados(string host, string usuario, string senha, string dataBase)
+	public BancoDados(String host, String usuario, String senha, String dataBase)
 	{//inicio executavel
-		this.host     = host;
-		this.usuario  = usuario;
-		this.senha    = senha;
+		this.localHost     = host;
+		this.user  = usuario;
+		this.passWord    = senha;
 		this.dataBase = dataBase;
 		this.porta    = 3306;
 	}//fim executavel
@@ -31,26 +32,26 @@ public class BancoDados
 	//parametro porta padrão 3306
 	//parametro usuario padrão root
 	//todos os dados menos porta e usuario seram passados na chamada do objeto
-	public BancoDados( string host, string senha, string dataBase)
+	public BancoDados( String host, String senha, String dataBase)
 	{//inicio executavel
-		this.host     = host;
-		this.usuario  = "root";
-		this.senha    = senha;
-		this.dataBase = dataBase;
-		this.porta    = 3306;
+		this.localHost = host;
+		this.user      = "root";
+		this.passWord  = senha;
+		this.dataBase  = dataBase;
+		this.porta     = 3306;
 	}//fim executavel
 
 	//parametro porta padrão 3306
 	//parametro usuario padrão root
 	//parametro senha padrão root
 	//Na chamada do objeto e necessario infomar somente host e dataBase
-	public BancoDados( string host, string dataBase)
+	public BancoDados( String host, String dataBase)
 	{//inicio executavel
-		this.host     = host;
-		this.usuario  = "root";
-		this.senha    = "root";
-		this.dataBase = dataBase;
-		this.porta    = 3306;
+		this.localHost = host;
+		this.user      = "root";
+		this.passWord  = "root";
+		this.dataBase  = dataBase;
+		this.porta     = 3306;
 	}//fim executavel
 	
 	//GETS END SETS HOST
@@ -86,34 +87,14 @@ public class BancoDados
 	}
 
 	//Metodos
-	public string ToString()
+	public String ToString()
 	{
 		return (
-			"Host:     " + this.host     +"\n"+
-			"Usuario:  " + this.usuario  +"\n"+
-			"Senha:    " + this.senha    +"\n"+
+			"Host:     " + this.localHost +"\n"+
+			"Usuario:  " + this.user  +"\n"+
+			"Senha:    " + this.passWord    +"\n"+
 			"DataBase: " + this.dataBase +"\n"+
 			"Porta:    " + this.porta    +"\n"
 		);
 	}//fim função ToString()	
-	
-	@SuppressWarnings("unused")
-	public void conexao()
-	{
-		//Atributos 
-		String host = getLocalHost();
-		String passWord = getPassWord();
-		String user = getUser();
-		int porta = getPorta();
-	}
-	
-	public void Executar()
-	{
-		
-	}
-	
-	public void desconectar()
-	{
-		
-	}
 }
