@@ -11,9 +11,9 @@ public abstract class Pessoa
 	public Pessoa () { }
 	//
 	public  Pessoa ( String  nome , String  email , Integer  idade ) {
-		this . nome   = nome;
-		this . email = email;
-		this . idade = idade;
+		this.nome   = nome;
+		this.email = email;
+		this.idade = idade;
 	}
 	
 	// Get Set
