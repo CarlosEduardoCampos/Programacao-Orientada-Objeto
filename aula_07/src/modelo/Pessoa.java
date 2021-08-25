@@ -8,6 +8,8 @@ public abstract class Pessoa
 	private  Integer idade;
 	
 	// Construtor
+	public Pessoa () { }
+	//
 	public  Pessoa ( String  nome , String  email , Integer  idade ) {
 		this . nome   = nome;
 		this . email = email;

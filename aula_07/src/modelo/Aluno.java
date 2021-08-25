@@ -6,6 +6,8 @@ public class Aluno extends Pessoa
 	public  String matricula;
 	
 	// Construtor
+	public Aluno (){ }
+	//
 	public  Aluno ( String  nome , String  email , Integer  idade , String  matricula ) {
 		super (nome, email, idade);		
 		this . matricula = matricula;
