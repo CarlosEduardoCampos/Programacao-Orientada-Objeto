@@ -30,15 +30,17 @@ public class CadAlunos extends JInternalFrame
 	private  JTextField txtCodigo;
 	private  JTextField txtNome;
 	private  JTextField txtEmail;	
-	private  JSpinner txtIdade;
+	private  JTextField txtIdade;
 	
 	private  JButton btnNovoRegistro;
 	private  JButton btnGravarRegistro;
 	private  JButton btnProximo;
 	private  JButton btnAnterior;
 	//
-	modelo.Aluno alunos [] =  new  modelo.Aluno [ 5 ];
-	int qteAlunos =  - 1 ; // controle de inserções.	
+	//modelo.Aluno alunos [] =  new  modelo.Aluno [ 5 ];
+	//int qteAlunos =  - 1 ; // controle de inserções.
+	
+	private Aluno aluno = null;
 	
 	public CadAlunos() {
 		setClosable    (true);
@@ -57,7 +59,7 @@ public class CadAlunos extends JInternalFrame
         txtCodigo    = new JTextField();
         txtNome      = new JTextField();
         txtEmail     = new JTextField();
-        txtIdade     = new JSpinner();
+        txtIdade     = new JTextField();
         
         btnNovoRegistro   = new JButton();
         btnGravarRegistro = new JButton();
@@ -173,69 +175,65 @@ public class CadAlunos extends JInternalFrame
 			public void actionPerformed(ActionEvent arg0) 
 			{
 				//validar a tela				
-				if(!existeDados()) 
-				{	
-					//verificar posição do vetor
-					if(qteAlunos <= 3) 
+				if(existeDados()) 
+				{
+					aluno = new Aluno
+					(
+						txtCodigo.getText(),
+						txtNome.getText(),
+						txtEmail.getText(),
+						txtIdade.getText(),
+						txtMatricula.getText()
+					);
+					if(txtCodigo.getText().length() == 0 || Integer.parseInt(txtCodigo.getText()) == 0)
 					{
-						qteAlunos++; //incrementa em +1						
-						//gravar
-						Aluno aluno = new modelo.Aluno(
-							txtNome.getText(),
-							txtEmail.getText(),
-							Integer.parseInt(txtIdade.getValue().toString()),
-							txtMatricula.getText()
-						);
-						//INSERT OU UPDATE
-						if(txtMatricula.getText().length() == 0)aluno.salvarDadosForm(0);//INSERT
-						else aluno.salvarDadosForm(1);//UPDATE
-						//
-						alunos[qteAlunos] = aluno; //BD
-						JOptionPane.showMessageDialog(null, "Dados gravados com sucesso!");
-						//limpar a tela
-						limparTela();
-					}else 
-					{
-						JOptionPane.showMessageDialog(null, "Não existe mais espaço para novos alunos!");
+						if(aluno.salvarDadosForm(0))
+						{
+							JOptionPane.showMessageDialog(null, "Cadastro de dados completo!");
+						}
+					}
+					else{
+						if(aluno.salvarDadosForm(1))
+						{
+							JOptionPane.showMessageDialog(null, "Cadastro de dados completo!");
+						}
 					}
 				}
-				
+				else 
+				{
+					JOptionPane.showMessageDialog(null, "Existem campos sem registro!");
+				}
 			}
+			
 		});
         
         btnProximo.addActionListener(new ActionListener() 
         {			
-			@Override
+        	@Override
 			public void actionPerformed(ActionEvent arg0) 
 			{
+				//Criar rotina de anterior
 				int proximo = 0;
-				//verificar se a qte de alunos é >= 0	
-				if(qteAlunos >= 0) 
-				{
-					//limparTela();
-					if(txtCodigo.getText().length() == 0) 
+				
+				if(txtCodigo.getText().length() == 0 ){
+					JOptionPane.showMessageDialog(null, "Ainda não a dados!");
+				}
+				else{
+					proximo = Integer.parseInt(txtCodigo.getText()) + 1;
+					//
+					aluno.getDadosForm(proximo); //busco do BD
+					//
+					if(aluno != null) 
 					{
-						txtCodigo.setText("0");
-					}else 
-					{
-						proximo = Integer.parseInt(txtCodigo.getText()) + 1;
-						if(proximo <= qteAlunos) 
-						{
-							txtCodigo.setText(String.valueOf(proximo));
-						}
+						txtCodigo    .setText  (String.valueOf(aluno.getCodigo()));
+						txtMatricula .setText  (aluno.getMatricula());
+						txtNome		 .setText  (aluno.getNome());
+						txtEmail	 .setText  (aluno.getEmail());
+						txtIdade	 .setText  (String.valueOf(aluno.getIdade()));
 					}
-					//pesquisar no vetor:
-					if(Integer.parseInt(txtCodigo.getText()) <= qteAlunos) 
-					{
-						int codigo = Integer.parseInt(txtCodigo.getText());
-						modelo.Aluno aluno = alunos[codigo]; //busco do BD
-						txtMatricula.setText(aluno.getMatricula());
-						txtNome.setText(aluno.getNome());
-						txtEmail.setText(aluno.getEmail());
-						txtIdade.setValue(aluno.getIdade());
+					else {
+						JOptionPane.showMessageDialog(null, "Este e o fim da lista!");
 					}
-				}else {
-					JOptionPane.showMessageDialog(null, "Sua lista ainda esta vazia!");
 				}
 			}
 		});
@@ -247,29 +245,25 @@ public class CadAlunos extends JInternalFrame
 			{
 				//Criar rotina de anterior
 				int anterior = 0;
-				if(Integer.parseInt(txtCodigo.getText()) <= 0)
-				{
-					JOptionPane.showMessageDialog(null, "Você já chegou ao inicio!");
-				}
-				else if(txtCodigo.getText().length() == 0 ){
-					JOptionPane.showMessageDialog(null, "Lista não iniciada!");
+				
+				if(txtCodigo.getText().length() == 0 ){
+					JOptionPane.showMessageDialog(null, "Ainda não a dados!");
 				}
 				else {
 					anterior = Integer.parseInt(txtCodigo.getText()) - 1;
-					if(anterior <= qteAlunos) 
-					{
-						txtCodigo.setText(String.valueOf(anterior));
 					
-					}
-					//pesquisar no vetor:
-					if(Integer.parseInt(txtCodigo.getText()) >= 0) 
+					if(anterior >= 1) 
 					{
-						int codigo = Integer.parseInt(txtCodigo.getText());
-						modelo.Aluno aluno = alunos[codigo]; //busco do BD
-						txtMatricula.setText(aluno.getMatricula());
-						txtNome.setText(aluno.getNome());
-						txtEmail.setText(aluno.getEmail());
-						txtIdade.setValue(aluno.getIdade());
+						aluno.getDadosForm(anterior); //busco do BD
+						//
+						txtCodigo    .setText  (String.valueOf(anterior));
+						txtMatricula .setText  (aluno.getMatricula());
+						txtNome		 .setText  (aluno.getNome());
+						txtEmail	 .setText  (aluno.getEmail());
+						txtIdade	 .setText  (String.valueOf(aluno.getIdade()));
+					}
+					else {
+						JOptionPane.showMessageDialog(null, "Este e o inicio da lista!");
 					}
 				}
 			}
@@ -282,10 +276,10 @@ public class CadAlunos extends JInternalFrame
 				if(existeDados())
 				{
 					limparTela();//limpas as informações
-					txtCodigo.setText("");
+					txtCodigo.setText("0");
 				}
 				else {
-					JOptionPane.showMessageDialog(null, "Os campos estâo vazios, novo cadastro ja e possivel!");
+					JOptionPane.showMessageDialog(null, "Os campos estâo vazios, novo cadastro já é possivel!");
 				}
 				
 			}
@@ -305,15 +299,15 @@ public class CadAlunos extends JInternalFrame
 		{
 			resposta = false;
 		}		
-		if(txtNome.getText().length() == 0 && resposta == false) 
+		if(txtNome.getText().length() == 0 && resposta == true) 
 		{
 			resposta = false;
 		}		
-		if(txtEmail.getText().length() == 0 && resposta == false) 
+		if(txtEmail.getText().length() == 0 && resposta == true) 
 		{
 			resposta = false;
 		}		
-		if((Integer)txtIdade.getValue() <= 0 && resposta == false) 
+		if((Integer)txtIdade.getText().length() <= 0 && resposta == true) 
 		{
 			resposta = false;
 		}
@@ -328,7 +322,7 @@ public class CadAlunos extends JInternalFrame
 		txtMatricula.setText("");
 		txtNome.setText("");
 		txtEmail.setText("");
-		txtIdade.setValue(0);
+		txtIdade.setText("");
 		txtMatricula.requestFocus();
 	}	
 }
