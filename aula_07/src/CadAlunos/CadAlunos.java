@@ -36,10 +36,6 @@ public class CadAlunos extends JInternalFrame
 	private  JButton btnGravarRegistro;
 	private  JButton btnProximo;
 	private  JButton btnAnterior;
-	
-	//modelo.BancoDados infoData = new BancoDados("localhost",3306,"root","pass1386");
-	BancoDados infoData = new BancoDados("localhost",3306,"root","pass1386");
-	//
 	//
 	modelo.Aluno alunos [] =  new  modelo.Aluno [ 5 ];
 	int qteAlunos =  - 1 ; // controle de inserções.	
@@ -176,21 +172,24 @@ public class CadAlunos extends JInternalFrame
 			@Override
 			public void actionPerformed(ActionEvent arg0) 
 			{
-				Connection connection = new ConexaoBD(infoData).conectar();
-				System.out.println("Conexão aberta!");
-				connection.close();
-				
 				//validar a tela				
-				if(validarTela()) 
-				{
-					this.conexao.conectar();
-					
+				if(!existeDados()) 
+				{	
 					//verificar posição do vetor
 					if(qteAlunos <= 3) 
 					{
 						qteAlunos++; //incrementa em +1						
 						//gravar
-						modelo.Aluno aluno = new modelo.Aluno(txtNome.getText(), txtEmail.getText(), (Integer)txtIdade.getValue(), txtMatricula.getText());
+						Aluno aluno = new modelo.Aluno(
+							txtNome.getText(),
+							txtEmail.getText(),
+							Integer.parseInt(txtIdade.getValue().toString()),
+							txtMatricula.getText()
+						);
+						//INSERT OU UPDATE
+						if(txtMatricula.getText().length() == 0)aluno.salvarDadosForm(0);//INSERT
+						else aluno.salvarDadosForm(1);//UPDATE
+						//
 						alunos[qteAlunos] = aluno; //BD
 						JOptionPane.showMessageDialog(null, "Dados gravados com sucesso!");
 						//limpar a tela
@@ -237,10 +236,6 @@ public class CadAlunos extends JInternalFrame
 					}
 				}else {
 					JOptionPane.showMessageDialog(null, "Sua lista ainda esta vazia!");
-				}
-				if(proximo > qteAlunos)
-				{
-					JOptionPane.showMessageDialog(null, "Não existe mais cadatros!");
 				}
 			}
 		});
@@ -296,37 +291,6 @@ public class CadAlunos extends JInternalFrame
 			}
         });
         pack();
-	}
-	
-	/**
-	 * Esta rotina server para validar se os campos em tela estão preenchidos
-	 * @return True ou False
-	 */
-	private boolean validarTela() 
-	{
-		boolean resposta = true;
-		//validar a tela.
-		if(txtMatricula.getText().length() == 0) 
-		{
-			JOptionPane.showMessageDialog(null, "Campo matrícula em branco. Verifique!");
-			resposta = false;
-		}		
-		if(txtNome.getText().length() == 0 && resposta == true) 
-		{
-			JOptionPane.showMessageDialog(null, "Campo nome em branco. Verifique!");
-			resposta = false;
-		}		
-		if(txtEmail.getText().length() == 0 && resposta == true) 
-		{
-			JOptionPane.showMessageDialog(null, "Campo e-mail em branco. Verifique!");
-			resposta = false;
-		}		
-		if((Integer)txtIdade.getValue() <= 0 && resposta == true) 
-		{
-			JOptionPane.showMessageDialog(null, "Campo idade inválido. Verifique!");
-			resposta = false;
-		}
-		return resposta;
 	}
 	
 	/**

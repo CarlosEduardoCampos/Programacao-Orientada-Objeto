@@ -14,8 +14,10 @@ import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.UIManager;
 
+import controllers.ConexaoBD;
+import modelo.BancoDados;
+
 public class Principal extends JFrame {
-	
 	//Atributos
 	private JDesktopPane jDesktopPane;
 	private JMenu jMenu1;

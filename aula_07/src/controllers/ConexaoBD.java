@@ -3,35 +3,38 @@ package controllers;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.util.jar.JarException;
+
+import javax.swing.JOptionPane;
 
 import modelo.BancoDados;
 
 public class ConexaoBD implements InterfaceBD
 {
-	private BancoDados servidor = null;
-	//
-	public ConexaoBD(BancoDados infoData) {
-		// TODO Auto-generated constructor stub
-		this.servidor = infoData;
-	}
-
+	//Atributos de conexa com o banco
+	private BancoDados infodata = new BancoDados("localhost", "bd_aula", "root", "pass1386", 3307);
+	
 	@Override
     public Connection conectar()
 	{
-		try
-		{
-			return
-			(
-				DriverManager.getConnection
-				(
-					"jdbc:mysql://localhost/bd_aula",
-					this.servidor.getUser(),
-					this.servidor.getPassWord()
-				)
+		try {//Tentar estabelecer a conexão
+			Connection conn = DriverManager.getConnection(
+				"jdbc:mysql:"+
+				this.infodata.getLocalHost()+":"+
+				this.infodata.getPorta()+"/"+
+				this.infodata.getDataBase()+"?serverTimezone=UTC",//linha de conexao
+				this.infodata.getUser(),						 //User do MySql
+				this.infodata.getPassWord()				        //PassWord do MySql
 			);
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
+			return conn;
+		}
+		catch(Exception e)
+		{
+			JOptionPane.showMessageDialog(
+				null, "Erro ao conectar no banco!"+ e.getMessage()
+			);
+			return null;
+		}
     }
 
     @Override
@@ -46,10 +49,4 @@ public class ConexaoBD implements InterfaceBD
         // TODO Auto-generated method stub
 
     }
-
-	@Override
-	public Connection conectar(BancoDados servidor) {
-		// TODO Auto-generated method stub
-		return null;
-	}
 }

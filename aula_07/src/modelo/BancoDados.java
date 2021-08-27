@@ -10,21 +10,23 @@ public class BancoDados
 	private int porta;
 	
 	//Costrutor
-	public BancoDados(String localHost, int porta, String user, String passWord)
+	public BancoDados(String host, String dataBase, String user, String passWord, int porta)
 	{
-		this.localHost = localHost;
-		this.porta = porta;
-		this.user = user;
-		this.passWord = passWord;
+		this.localHost = host;
+		this.dataBase  = dataBase;
+		this.porta	   = porta;
+		this.user 	   = user;
+		this.passWord  = passWord;
+		this.porta     = porta;
 	}
 
 	//parametro porta padrão 3306
 	//todos os dados menos porta seram passados na chamado do objeto
 	public BancoDados(String host, String usuario, String senha, String dataBase)
 	{//inicio executavel
-		this.localHost     = host;
-		this.user  = usuario;
-		this.passWord    = senha;
+		this.localHost= host;
+		this.user	  = usuario;
+		this.passWord = senha;
 		this.dataBase = dataBase;
 		this.porta    = 3306;
 	}//fim executavel
@@ -84,6 +86,14 @@ public class BancoDados
 	}
 	public void setPassWord(String passWord) {
 		this.passWord = passWord;
+	}
+	
+	//GETS END SETS DATABASE
+	public String getDataBase() {
+		return dataBase;
+	}
+	public void setDataBase(String dataBase) {
+		this.dataBase = dataBase;
 	}
 
 	//Metodos
