@@ -73,14 +73,14 @@ public class Aluno
 		String sql = "";
 		if(modo == 0)
 		{
-			sql = "INSERT INTO tb_aula("+
+			sql = "INSERT INTO tb_Aula("+
 				this.getMatricula()  +","+
 				this.getNome()       +","+
 				this.getEmail()      +","+
 				this.getIdade()		 +");";
 		}
 		else {
-			sql = "UPDATE tb_aula SET"+
+			sql = "UPDATE tb_Aula SET"+
 				"nome="  +this.getNome()       +","+
 				"email=" +this.getEmail()      +","+
 				"idade=" +this.getIdade()	   +","+
@@ -103,7 +103,7 @@ public class Aluno
 	
 	public Aluno getDadosForm(int id)
 	{
-		String sql = "SELECT * FROM bd_aula WHERE id = ?";
+		String sql = "SELECT * FROM tb_Aula WHERE id = ?";
 		
 		try {
 			PreparedStatement stmt = this.conn.prepareStatement(sql);
