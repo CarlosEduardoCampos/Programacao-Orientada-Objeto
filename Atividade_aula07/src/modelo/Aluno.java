@@ -1,9 +1,11 @@
 package modelo;
 
+import java.awt.List;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 
 import javax.swing.JOptionPane;
 
@@ -70,25 +72,40 @@ public class Aluno
 	
 	public boolean salvarDadosForm(int modo)
 	{
-		String sql = "";
+		PreparedStatement stmt = null;
+		
 		if(modo == 0)
 		{
-			sql = "INSERT INTO tb_Aula("+
-				this.getMatricula()  +","+
-				this.getNome()       +","+
-				this.getEmail()      +","+
-				this.getIdade()		 +");";
+			try {
+				stmt = conn.prepareStatement("INSERT INTO tb_Aluno(matricula, nome, email, idade) Value(?,?,?,?)");
+				stmt.setString(1, getMatricula());
+				stmt.setString(2, getNome());
+				stmt.setString(3, getEmail());
+				stmt.setInt(4, getIdade());
+			}
+			catch (SQLException e) {
+				JOptionPane.showMessageDialog(
+					null, "Erro ao preparar comando INSERT no banco!"+ e.getMessage()
+				);
+			}
 		}
 		else {
-			sql = "UPDATE tb_Aula SET"+
-				"nome="  +this.getNome()       +","+
-				"email=" +this.getEmail()      +","+
-				"idade=" +this.getIdade()	   +","+
-				"WHERE matricula="  +this.getMatricula()  +";";
+			try {
+				stmt = conn.prepareStatement("UPDATE tb_Aluno SET codigo=?, matricula=?, nome=?, email=?, idade=?");
+				stmt.setInt(1,1);
+				stmt.setString(2, getMatricula());
+				stmt.setString(3, getNome());
+				stmt.setString(4, getEmail());
+				stmt.setInt(5, getIdade());
+			}
+			catch (SQLException e) {
+				JOptionPane.showMessageDialog(
+					null, "Erro ao preparar comando INSERT no banco!"+ e.getMessage()
+				);
+			}
 		}
 		
 		try{
-			PreparedStatement stmt = this.conn.prepareStatement(sql);
 			stmt.execute();
 			return true;
 		}
@@ -101,24 +118,52 @@ public class Aluno
 		}
 	}
 	
-	public Aluno getDadosForm(int id)
+	public Aluno getDadosForm(int idAnt, Integer operacao)
 	{
-		String sql = "SELECT * FROM tb_Aula WHERE id = ?";
+		String sql = "";
+        String op = "";
+        String ordenacao = "";
+        ResultSet res = null;
+        Statement st = null;
+        //
+        switch(operacao){
+            case 0: 
+                op = ">"; 
+                ordenacao = " order by id asc ";
+                break;
+            case 1: 
+                op = "<"; 
+                ordenacao = " order by id desc ";
+                break;
+        }
+		//
+		String sql1 = "SELECT * FROM tb_Aluno WHERE codigo="+ op + " " + idAnt + ordenacao + " limit 1";
+		try {
+			st = conn.createStatement();
+		}
+		catch (SQLException e) {
+			JOptionPane.showMessageDialog(
+				null, "Erro ao preparar comando SELECT no banco!"+ e.getMessage()
+			);
+		}
 		
 		try {
-			PreparedStatement stmt = this.conn.prepareStatement(sql);
-			stmt.setInt(1, id);
-			ResultSet rs = stmt.executeQuery();
+			res = st.executeQuery(sql1);
 			//
 			Aluno aluno = new Aluno();
-			//posiciona resultset na primeira posição
-			rs.first();
-			//Alimenta objeto com dados do banco
-			aluno.setCodigo(id);
-			aluno.setMatricula(rs.getString("matricula"));
-			aluno.setNome(rs.getString("nome"));
-			aluno.setIdade(rs.getInt("idade"));
-			//
+			//posiciona resultset na proxima posição
+			if(res != null)
+			{
+				while(res.next())
+				{
+					//Alimenta objeto com dados do banco
+					aluno.setCodigo(res.getString("codigo"));
+					aluno.setMatricula(res.getString("matricula"));
+					aluno.setNome(res.getString("nome"));
+					aluno.setIdade(res.getInt("idade"));
+					//
+				}
+			}
 			return aluno;
 		}
 		catch(Exception e)
@@ -133,7 +178,7 @@ public class Aluno
 	public Integer getCodigo() {
 		return codigo;
 	}
-	public void setCodigo(Integer codigo) {
-		this.codigo = codigo;
+	public void setCodigo(String codigo) {
+		this.codigo = Integer.parseInt(codigo);
 	}
 }

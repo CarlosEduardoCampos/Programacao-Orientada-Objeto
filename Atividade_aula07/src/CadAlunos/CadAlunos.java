@@ -221,13 +221,11 @@ public class CadAlunos extends JInternalFrame
 				//Criar rotina de anterior
 				int proximo = 0;
 				
-				if(txtCodigo.getText().length() == 0 ){
-					JOptionPane.showMessageDialog(null, "Ainda não a dados!");
-				}
+				if(txtCodigo.getText().length() == 0 )txtCodigo.setText("1");
 				else{
-					proximo = Integer.parseInt(txtCodigo.getText()) + 1;
+					proximo = Integer.parseInt(txtCodigo.getText());
 					//
-					aluno.getDadosForm(proximo); //busco do BD
+					aluno.getDadosForm(proximo,0); //busco do BD
 					//
 					if(aluno != null) 
 					{
@@ -252,15 +250,13 @@ public class CadAlunos extends JInternalFrame
 				//Criar rotina de anterior
 				int anterior = 0;
 				
-				if(txtCodigo.getText().length() == 0 ){
-					JOptionPane.showMessageDialog(null, "Ainda não a dados!");
-				}
+				if(txtCodigo.getText().length() == 0 )txtCodigo.setText("1");
 				else {
-					anterior = Integer.parseInt(txtCodigo.getText()) - 1;
+					anterior = Integer.parseInt(txtCodigo.getText());
 					
 					if(anterior >= 1) 
 					{
-						aluno.getDadosForm(anterior); //busco do BD
+						aluno.getDadosForm(anterior,1); //busco do BD
 						//
 						txtCodigo    .setText  (String.valueOf(anterior));
 						txtMatricula .setText  (aluno.getMatricula());

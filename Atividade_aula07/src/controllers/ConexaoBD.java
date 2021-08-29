@@ -10,20 +10,21 @@ import modelo.BancoDados;
 public class ConexaoBD implements InterfaceBD
 {
 	//Atributos de conexa com o banco
-	private BancoDados infodata = new BancoDados("localhost", "bd_aula", "root", "pass1386", 3306);
+	private BancoDados infodata = new BancoDados("localhost", "bd_aula", "root", "pass1386", 3307);
 	
 	@Override
     public Connection conectar()
 	{
 		try {//Tentar estabelecer a conexão
 			Connection conn = DriverManager.getConnection(
-				"jdbc:mysql:"+
+				"jdbc:mysql://"+
 				this.infodata.getLocalHost()+":"+
 				this.infodata.getPorta()+"/"+
-				this.infodata.getDataBase()+"?serverTimezone=UTC",//linha de conexao
+				this.infodata.getDataBase(),//linha de conexao
 				this.infodata.getUser(),						 //User do MySql
 				this.infodata.getPassWord()				        //PassWord do MySql
 			);
+			//Class.forName("com.mysql.jdbc.Driver");
 			return conn;
 		}
 		catch(Exception e)
