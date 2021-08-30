@@ -76,6 +76,7 @@ namespace ItemStore
             this.colaboradorToolStripMenuItem.Name = "colaboradorToolStripMenuItem";
             this.colaboradorToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.colaboradorToolStripMenuItem.Text = "Colaborador";
+            this.colaboradorToolStripMenuItem.Click += new System.EventHandler(this.colaboradorToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 

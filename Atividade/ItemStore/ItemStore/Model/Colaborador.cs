@@ -9,23 +9,25 @@ using System.Windows.Forms;
 
 namespace ItemStore.Model
 {
-    class Produto
+    class Colaborador
     {
-        public int Codigo    { get; set; }
-        public string Nome   { get; set; }
-        public string Marca  { get; set; }
-        public int Valor     { get; set; }
-        public string codBar { get; set; }
+        //Atributo
+        public int Codigo;
+        public string Cpf;
+        public string Nome;
+        public string Login;
+        public string Senha;
 
-        //Costrutor
-        public Produto() { }
-        public Produto(string Codigo, string Nome, string Marca, string Valor)
+        //Costrutores
+        public Colaborador() { }
+        //
+        public Colaborador(string Codigo, string Cpf, string Nome, string Login, string Senha)
         {
-            this.Codigo = int.Parse(Codigo.Trim().ToUpper());
-            this.Nome   = Nome.Trim().ToUpper();
-            this.Marca  = Marca.Trim().ToUpper();
-            this.Valor = int.Parse(Valor.Trim().ToUpper());
-            this.codBar = null;
+            this.Codigo = int.Parse(Codigo);
+            this.Cpf    = Cpf;
+            this.Nome   = Nome;
+            this.Login  = Login;
+            this.Senha  = Senha;
         }
 
         //Métodos
@@ -47,16 +49,17 @@ namespace ItemStore.Model
                     if (this.Codigo == 0)
                     {
                         //Insert
-                        sql = "INSERT INTO tb_Produto(nome, marca, valor)" +
-                              "VALUES('" + this.Nome + "','" + this.Marca + "'," + this.Valor +");";
+                        sql = "INSERT INTO tb_Colaborador(cpf,nome,login,senha)" +
+                              "VALUES('" + this.Cpf + "','"+ this.Nome + "','" + this.Login + "','" + this.Senha+ "');";
                     }
                     else
                     {
                         //Update
-                        sql = "UPDATE tb_Produto SET" +
-                              "nome='" + this.Nome + "', " +
-                              "marca='" + this.Marca + "', " +
-                              "valor=" + this.Valor + ", " +
+                        sql = "UPDATE tb_Colaborador SET" +
+                              "cpf='"   + this.Cpf    +"', "+
+                              "nome='"  + this.Nome   +"', "+
+                              "login='" + this.Login  +"', "+
+                              "senha='" + this.Senha  +"', "+
                               "WHERE codigo=" + this.Codigo + ";";
                     }
                     comando = new MySqlCommand(sql, ConexaoBD.getConexao());
@@ -89,22 +92,24 @@ namespace ItemStore.Model
         /// <param name="tipoBusc"> 0: proximo; 1:anterio </param>
         /// <param name="conexao">Objeto de conexão com o Banco de dados</param>
         /// <returns></returns>
-        public Produto Buscar(int codigo, int tipoBusc, InterfaceBD conexao)
+        public Colaborador Buscar(int codigo, int tipoBusc, InterfaceBD conexao)
         {
             //zero o objeto
             this.Codigo = 0;
+            this.Cpf    = "";
             this.Nome   = "";
-            this.Marca  = "";
-            this.Valor = 0;
-            try{
+            this.Login  = "";
+            this.Senha  = "";
+            try
+            {
                 //Comando de pesquisa
-                MySqlCommand comando = null;
+                MySql.Data.MySqlClient.MySqlCommand comando = null;
                 MySqlDataReader dataReader = null;
                 string sql = "";
                 //
                 if (conexao.Conectar())
                 {
-                    sql = "SELECT * FROM tb_Produto WHERE codigo";
+                    sql = "SELECT * FROM tb_Colaborador WHERE codigo";
                     if (tipoBusc == 0)
                     {
                         //Proximo
@@ -123,14 +128,15 @@ namespace ItemStore.Model
                      **/
                     dataReader = comando.ExecuteReader();
                     //
-                    if(dataReader.HasRows)//Existe linha
+                    if (dataReader.HasRows)//Existe linha
                     {
-                        while(dataReader.Read())
+                        while (dataReader.Read())
                         {
                             this.Codigo = int.Parse(dataReader["codigo"].ToString());
+                            this.Cpf    = dataReader["cpf"].ToString();
                             this.Nome   = dataReader["nome"].ToString();
-                            this.Marca = dataReader["marca"].ToString();
-                            this.Valor = int.Parse(dataReader["valor"].ToString());
+                            this.Login  = dataReader["login"].ToString();
+                            this.Senha  = dataReader["senha"].ToString();
                         }
                     }
                     //Fechamento dos comandos
@@ -140,7 +146,7 @@ namespace ItemStore.Model
                     conexao.Desconectar();
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(
                         "Erro ao executar Select no Banco de Dados" + ex.ToString(),//testo da aplicação
@@ -155,23 +161,24 @@ namespace ItemStore.Model
         public bool Deletar(int codigo, InterfaceBD conexao)
         {
             bool res = false;
-            try{
+            try
+            {
                 MySqlCommand comando = null;
                 string sql = "";
                 //
-                if(conexao.Conectar())
+                if (conexao.Conectar())
                 {
-                    sql = "DELETE FROM tb_Produto WHERE codigo=" + this.Codigo;
+                    sql = "DELETE FROM tb_Colaborador WHERE codigo=" + this.Codigo;
                     //
-                    comando = new MySqlCommand(sql,conexao.getConexao());
+                    comando = new MySqlCommand(sql, conexao.getConexao());
                     comando.ExecuteNonQuery();
                     comando.Dispose();
                     conexao.Desconectar();
                     //
-                    res = true; 
+                    res = true;
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(
                         "Erro ao executar Delete no Banco de Dados" + ex.ToString(),//testo da aplicação

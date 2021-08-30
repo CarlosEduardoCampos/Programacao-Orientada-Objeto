@@ -14,8 +14,8 @@ namespace ItemStore
 {
     public partial class Form1 : Form
     {
-        BancoDados dataBaseMySql = new BancoDados("localhost", "pass1386", "bd_itemStore");
-        BancoDados dataBaseMariaDB = new BancoDados("localhost", "root", "pass1386", "bd_itemStore", 3307);
+        BancoDados dataBaseMySql = new BancoDados("localhost", "root", "", "store", 3306);
+        BancoDados dataBaseMariaDB = new BancoDados("localhost", "root", "", "store", 3306);
         /// <summary>
         /// 0 - MySql 
         /// 1 - MariaDB
@@ -41,6 +41,12 @@ namespace ItemStore
         {
             Form2 form2 = new Form2(this);
             form2.Show();
+        }
+
+        private void colaboradorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form3 form3 = new Form3(this);
+            form3.Show();
         }
     }
 }

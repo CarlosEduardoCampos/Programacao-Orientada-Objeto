@@ -28,12 +28,13 @@ namespace Medalhas.controller
             {
                 try
                 {
-                    string sql = "Server="      + infoData.host             +";"+
-                                 "DataBase="    + infoData.dataBase         +";"+
-                                 "Uid="         + infoData.usuario          +";"+
-                                 "Pwd="         + infoData.senha            +";"+
+                    string sql = "Data Source=" + infoData.host + ";" +
+                                 "DataBase=" + infoData.dataBase + ";" +
+                                 "uid=" + infoData.usuario + ";" +
+                                 "Password=" + infoData.senha + ";" +
                                  "Connection Timeout=900;" +
-                                 "Port="        + infoData.porta.ToString() +";";
+                                 "Port=" + infoData.porta + ";"+
+                                 "SSL Mode = none";
 
                     this.conexao = new MySqlConnection(sql);
                     this.conexao.Open();

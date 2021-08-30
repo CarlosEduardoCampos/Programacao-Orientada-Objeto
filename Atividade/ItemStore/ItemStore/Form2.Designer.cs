@@ -120,6 +120,7 @@ namespace ItemStore
             this.btnAnterior.TabIndex = 8;
             this.btnAnterior.Text = "Anterior";
             this.btnAnterior.UseVisualStyleBackColor = true;
+            this.btnAnterior.Click += new System.EventHandler(this.btnAnterior_Click);
             // 
             // btnLimpar
             // 
@@ -149,6 +150,7 @@ namespace ItemStore
             this.btnProximo.TabIndex = 11;
             this.btnProximo.Text = "Proximo";
             this.btnProximo.UseVisualStyleBackColor = true;
+            this.btnProximo.Click += new System.EventHandler(this.btnProximo_Click);
             // 
             // btnExcluir
             // 
@@ -158,6 +160,7 @@ namespace ItemStore
             this.btnExcluir.TabIndex = 12;
             this.btnExcluir.Text = "Excluir";
             this.btnExcluir.UseVisualStyleBackColor = true;
+            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
             // Form2
             // 
@@ -178,6 +181,7 @@ namespace ItemStore
             this.Controls.Add(this.lbMarca);
             this.Controls.Add(this.lbNome);
             this.Controls.Add(this.lbCodigo);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;

@@ -839,20 +839,28 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Carlos\\.nuget\\packages\\": {}
+    "C:\\Users\\caduc\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
+    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Carlos\\Desktop\\projetosjv\\Atividade\\ItemStore\\ItemStore\\ItemStore.csproj",
+      "projectUniqueName": "C:\\Users\\caduc\\Desktop\\POO\\Atividade\\ItemStore\\ItemStore\\ItemStore.csproj",
       "projectName": "ItemStore",
-      "projectPath": "C:\\Users\\Carlos\\Desktop\\projetosjv\\Atividade\\ItemStore\\ItemStore\\ItemStore.csproj",
-      "packagesPath": "C:\\Users\\Carlos\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Carlos\\Desktop\\projetosjv\\Atividade\\ItemStore\\ItemStore\\obj\\",
+      "projectPath": "C:\\Users\\caduc\\Desktop\\POO\\Atividade\\ItemStore\\ItemStore\\ItemStore.csproj",
+      "packagesPath": "C:\\Users\\caduc\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\caduc\\Desktop\\POO\\Atividade\\ItemStore\\ItemStore\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+        "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+      ],
       "configFilePaths": [
-        "C:\\Users\\Carlos\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\caduc\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net5.0-windows7.0"
@@ -900,7 +908,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.303\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
       }
     }
   }

@@ -48,16 +48,5 @@ namespace Medalhas.model
             this.dataBase = database;
             this.porta    = 3306;
         }
-
-        public string ToString()
-        {
-            return(
-                "HOST: "     + this.host     +"\n"+
-                "USUARIO: "  + this.usuario  +"\n"+
-                "SENHA: "    + this.senha    +"\n"+
-                "DATABASE: " + this.dataBase +"\n"+
-                "PORTA: "    + this.porta    +"\n"
-            );
-        }
     }
 }

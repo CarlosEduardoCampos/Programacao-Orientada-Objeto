@@ -11,10 +11,11 @@ using System.Windows.Forms;
 
 namespace ItemStore
 {
-    public partial class Form2 : Form
+    public partial class Form3 : Form
     {
         Form1 form1 = new Form1();
-        public Form2(Form1 form1)
+        //
+        public Form3(Form1 form1)
         {
             InitializeComponent();
             this.form1 = form1;
@@ -24,19 +25,62 @@ namespace ItemStore
         private void limpar()
         {
             txtCodigo.Clear();
+            txtCpf.Clear();
             txtNome.Clear();
-            txtMarca.Clear();
-            txtValor.Clear();
+            txtLogin.Clear();
+            txtSenha.Clear();
         }
 
         //Verifica se existe texto em entrada de dados
         private bool ExisteTexto()
         {
-            if (string.IsNullOrWhiteSpace(txtCodigo.Text))     return false;
-            else if (string.IsNullOrWhiteSpace(txtNome.Text))  return false;
-            else if (string.IsNullOrWhiteSpace(txtMarca.Text)) return false;
-            else if (string.IsNullOrWhiteSpace(txtValor.Text)) return false;
+            if (string.IsNullOrWhiteSpace(txtCodigo.Text)) return false;
+            else if (string.IsNullOrWhiteSpace(txtCpf.Text)) return false;
+            else if (string.IsNullOrWhiteSpace(txtNome.Text)) return false;
+            else if (string.IsNullOrWhiteSpace(txtLogin.Text)) return false;
+            else if (string.IsNullOrWhiteSpace(txtSenha.Text)) return false;
             else return true;
+        }
+
+        /// <summary>
+        /// Repassa os dados do objeto para os campos de digitação
+        /// </summary>
+        /// <param name="colab"> Objeto abastecido com dados</param>
+        private void ColaboradorTela(Colaborador colab)
+        {
+            if (colab.Codigo != 0)
+            {
+                txtCodigo.Text = colab.Codigo.ToString();
+                txtCpf.Text    = colab.Cpf;
+                txtNome.Text   = colab.Nome;
+                txtLogin.Text  = colab.Login;
+                txtSenha.Text  = colab.Senha;
+            }
+            else
+            {
+                MessageBox.Show
+                    (
+                        " Não ouve retorno de dados ",
+                        " Entrada de dados ",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Exclamation
+                    );
+            }
+        }
+
+        private void btnLimpar_Click(object sender, EventArgs e)
+        {
+            if (!ExisteTexto())
+            {
+                limpar();
+            }
+            else MessageBox.Show
+            (
+                " Os espaços ainda estão vazios ",
+                " Entrada de dados vazia ",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Exclamation
+            );
         }
 
         private void btnGravar_Click(object sender, EventArgs e)
@@ -47,7 +91,7 @@ namespace ItemStore
             if (ExisteTexto())
             {
                 //Cria Objeto
-                Produto Item = new Produto(txtCodigo.Text, txtNome.Text, txtMarca.Text, txtValor.Text);
+                Colaborador Item = new Colaborador(txtCodigo.Text, txtCpf.Text, txtNome.Text, txtLogin.Text, txtSenha.Text);
 
                 if (Item.Gravar(form1.conexao))
                 {
@@ -77,51 +121,15 @@ namespace ItemStore
             );
         }
 
-        private void btnLimpar_Click(object sender, EventArgs e)
-        {
-            if (!ExisteTexto())
-            {
-                limpar();
-            }
-            else MessageBox.Show
-            (
-                " Os espaços ainda estão vazios ",
-                " Entrada de dados vazia ",
-                MessageBoxButtons.OK,
-                MessageBoxIcon.Exclamation
-            );
-        }
-
-        private void btnProximo_Click(object sender, EventArgs e)
-        {
-            if(txtCodigo.Text.Length == 0) txtCodigo.Text = "0";
-            //
-            try
-            {
-                Produto produto = new Produto();//Cria objeto
-                produto.Buscar(int.Parse(txtCodigo.Text), 0, form1.conexao);//Abastece objetos com banco de dados
-                ProdutoTela(produto);//Repassa dados do objeto para tela
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show
-                (
-                    " Erro ao buscar dados " + ex.ToString(),
-                    " Entrada de dados ",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Error
-                );
-            }
-        }
-        private void btnAnterior_Click(object sender, EventArgs e)
+        private void btnAnt_Click(object sender, EventArgs e)
         {
             if (txtCodigo.Text.Length != 0 && txtCodigo.Text != "0")
             {
                 try
                 {
-                    Produto produto = new Produto();//Cria objeto
-                    produto.Buscar(int.Parse(txtCodigo.Text), 1, form1.conexao);//Abastece objetos com banco de dados
-                    ProdutoTela(produto);//Repassa dados do objeto para tela
+                    Colaborador colab = new Colaborador();//Cria objeto
+                    colab.Buscar(int.Parse(txtCodigo.Text), 1, form1.conexao);//Abastece objetos com banco de dados
+                    ColaboradorTela(colab);//Repassa dados do objeto para tela
                 }
                 catch (Exception ex)
                 {
@@ -134,7 +142,8 @@ namespace ItemStore
                     );
                 }
             }
-            else{
+            else
+            {
                 MessageBox.Show
                     (
                         " Este e o inicio, não exite anteriores ",
@@ -144,45 +153,43 @@ namespace ItemStore
                     );
             }
         }
-        /// <summary>
-        /// Repassa os dados do objeto para os campos de digitação
-        /// </summary>
-        /// <param name="produto"> Objeto abastecido com dados</param>
-        private void ProdutoTela(Produto produto)
+
+        private void btnProx_Click(object sender, EventArgs e)
         {
-            if (produto.Codigo != 0)
+            if (txtCodigo.Text.Length == 0) txtCodigo.Text = "0";
+            //
+            try
             {
-                txtCodigo.Text = produto.Codigo.ToString();
-                txtMarca.Text = produto.Marca;
-                txtNome.Text = produto.Nome;
-                txtValor.Text = produto.Valor.ToString();
+                Colaborador colab = new Colaborador();//Cria objeto
+                colab.Buscar(int.Parse(txtCodigo.Text), 0, form1.conexao);//Abastece objetos com banco de dados
+                ColaboradorTela(colab);//Repassa dados do objeto para tela
             }
-            else
+            catch (Exception ex)
             {
                 MessageBox.Show
-                    (
-                        " Não ouve retorno de dados ",
-                        " Entrada de dados ",
-                        MessageBoxButtons.OK,
-                        MessageBoxIcon.Exclamation
-                    );
+                (
+                    " Erro ao buscar dados " + ex.ToString(),
+                    " Entrada de dados ",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error
+                );
             }
         }
 
         private void btnExcluir_Click(object sender, EventArgs e)
         {
-            if(txtCodigo.Text.Length != 0 && int.Parse(txtCodigo.Text) > 0)
+            if (txtCodigo.Text.Length != 0 && int.Parse(txtCodigo.Text) > 0)
             {
-                if(MessageBox.Show("Deseja realmente excluir o Produto"+
-                    txtNome.Text +", "+ txtMarca.Text+"?",
+                if (MessageBox.Show("Deseja realmente excluir o Produto" +
+                    txtNome.Text + ", " + txtLogin.Text + "?",
                     "Deletar Produto",
                     MessageBoxButtons.YesNo,
-                    MessageBoxIcon.Question)== DialogResult.Yes
+                    MessageBoxIcon.Question) == DialogResult.Yes
                   )
                 {
-                    Produto produto = new Produto();
-                    produto.Codigo = int.Parse(txtCodigo.Text);
-                    if(produto.Deletar(produto.Codigo, form1.conexao))
+                    Colaborador colab = new Colaborador();
+                    colab.Codigo = int.Parse(txtCodigo.Text);
+                    if (colab.Deletar(colab.Codigo, form1.conexao))
                     {
                         MessageBox.Show
                        (
