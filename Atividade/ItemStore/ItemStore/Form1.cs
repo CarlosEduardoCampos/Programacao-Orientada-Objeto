@@ -14,8 +14,8 @@ namespace ItemStore
 {
     public partial class Form1 : Form
     {
-        BancoDados dataBaseMySql = new BancoDados("localhost", "root", "", "store", 3306);
-        BancoDados dataBaseMariaDB = new BancoDados("localhost", "root", "", "store", 3306);
+        BancoDados dataBaseMySql = new BancoDados("localhost", "root", "", "bd_itemStore", 3306);
+        BancoDados dataBaseMariaDB = new BancoDados("localhost", "root", "", "bd_itemStore", 3306);
         /// <summary>
         /// 0 - MySql 
         /// 1 - MariaDB
@@ -25,7 +25,7 @@ namespace ItemStore
         public Form1()
         {
             InitializeComponent();
-            qualBD = 1;
+            qualBD = 0;
             if(qualBD == 0)
             {
                 //MySql

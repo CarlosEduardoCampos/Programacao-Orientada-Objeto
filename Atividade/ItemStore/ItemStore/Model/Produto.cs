@@ -108,12 +108,12 @@ namespace ItemStore.Model
                     if (tipoBusc == 0)
                     {
                         //Proximo
-                        sql += ">" + codigo + "ORDER BY codigo ASC limit 1";
+                        sql += " > " + codigo + " ORDER BY codigo ASC LIMIT 1;";
                     }
                     else
                     {
                         //Anterior
-                        sql += "<" + codigo + "ORDER BY codigo DESC limit 1";
+                        sql += " < " + codigo + " ORDER BY codigo DESC LIMIT 1;";
                     }
                     //
                     comando = new MySqlCommand(sql, conexao.getConexao());

@@ -17,13 +17,13 @@ namespace Medalhas.model
 
         //Costrutores
         //todos os atributos seram declarados na chamada do objeto
-        public BancoDados(string host, string usuario, string senha, string database, int porta)
+        public BancoDados(string host, string usuario, string senha, string dataBase, int porta)
         {
             this.host     = host;
             this.usuario  = usuario;
             this.senha    = senha;
             this.dataBase = dataBase;
-            this.porta = porta;
+            this.porta    = porta;
         }
 
         //Portar recebe valor padrão 3306
